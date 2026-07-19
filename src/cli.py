@@ -886,6 +886,14 @@ def agent_run_command(args: argparse.Namespace) -> None:
     from .agents.factory import create_agent_backend
     from .agents.runner import run_agent_evaluation
 
+    # Persistent session resume is only implemented for the claude-code backend.
+    if args.session_mode == "persistent" and args.backend != "claude-code":
+        logger.error(
+            "--session-mode persistent is only supported for the claude-code "
+            f"backend (got '{args.backend}')."
+        )
+        sys.exit(1)
+
     # Build backend kwargs
     backend_kwargs: Dict[str, Any] = {}
     if args.backend == "codex" and args.reasoning_effort:
@@ -902,6 +910,8 @@ def agent_run_command(args: argparse.Namespace) -> None:
             skill_dirs=args.skill_dirs,
             save_events=args.save_events,
             no_skills=args.no_skills,
+            session_mode=args.session_mode,
+            compact_threshold=args.compact_threshold_tokens,
             **backend_kwargs,
         )
 
@@ -913,6 +923,8 @@ def agent_run_command(args: argparse.Namespace) -> None:
                 concurrency=args.concurrency,
                 keep_workspaces=args.keep_workspaces,
                 problem_ids=args.problem_ids,
+                session_mode=args.session_mode,
+                shuffle_seed=args.shuffle_seed,
             )
         )
 
@@ -1130,6 +1142,37 @@ def main() -> None:
             "Persist the agent's full event stream (tool calls, reasoning) "
             "to <workspace>/events.jsonl for auditing skill activation, "
             "tool selection, etc."
+        ),
+    )
+    agent_parser.add_argument(
+        "--session-mode",
+        choices=["fresh", "persistent"],
+        default="fresh",
+        help=(
+            "'fresh' (default): clean-room, one session per task, runs in "
+            "parallel. 'persistent' (claude-code only): one resumed session "
+            "across all tasks in a shared workspace, run sequentially, with "
+            "eager compaction between tasks. Exploratory/non-comparable."
+        ),
+    )
+    agent_parser.add_argument(
+        "--shuffle-seed",
+        type=int,
+        default=None,
+        help=(
+            "Deterministically permute task order (persistent mode: check "
+            "whether the learning curve survives reordering)."
+        ),
+    )
+    agent_parser.add_argument(
+        "--compact-threshold-tokens",
+        type=int,
+        default=250000,
+        help=(
+            "Persistent mode: eagerly compact the session between tasks once "
+            "carried context exceeds this many input tokens (default 250000, "
+            "~25%% of the 1M window). 0 disables our eager pass (ablation only; "
+            "not the normal path)."
         ),
     )
     agent_parser.set_defaults(func=agent_run_command)

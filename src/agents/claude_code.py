@@ -6,11 +6,26 @@ import logging
 import os
 import time
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 from .base import AgentBackend, AgentResult
 
 logger = logging.getLogger(__name__)
+
+
+def _context_tokens(usage: Dict[str, Any]) -> int:
+    """True carried-context size from a usage block.
+
+    ``input_tokens`` alone counts only the uncached new tokens; for a resumed
+    session nearly the whole transcript arrives as ``cache_read_input_tokens``.
+    The compaction trigger must see the full context, so sum all three.
+    """
+    return (
+        (usage.get("input_tokens") or 0)
+        + (usage.get("cache_read_input_tokens") or 0)
+        + (usage.get("cache_creation_input_tokens") or 0)
+    )
+
 
 CLAUDE_CODE_SKILL_STEP = """\
 ## 0. Load the q-kdb skill
@@ -77,11 +92,24 @@ class ClaudeCodeBackend(AgentBackend):
     ) -> AgentResult:
         """Invoke claude CLI in headless mode."""
         task_id_str = workspace.name
+        # In persistent mode the workspace is a fixed "session" dir, so the id
+        # can't be derived from its name; fall back to -1 and let the runner
+        # stamp the real task_id from the problem dict.
+        try:
+            parsed_task_id = int(str(task_id_str).split("_")[-1])
+        except ValueError:
+            parsed_task_id = -1
 
         # Note: Claude Code CLI 2.1+ does not expose a --max-turns flag
         # (silently accepted but ignored). The per-task --timeout is the
         # only enforced backstop. We still track self.max_turns and log
         # loudly when a task exceeds it — see the post-run check below.
+        # Persistent mode needs the per-turn event stream to read the true
+        # end-of-task context-window size (the compaction trigger), which the
+        # single aggregate 'json' result can't provide. So stream whenever the
+        # user asked to save events OR we're in persistent mode.
+        want_stream = self.save_events or self.session_mode == "persistent"
+
         cmd = [
             "claude",
             "-p",
@@ -89,13 +117,20 @@ class ClaudeCodeBackend(AgentBackend):
             "--model",
             self.model,
             "--output-format",
-            "stream-json" if self.save_events else "json",
+            "stream-json" if want_stream else "json",
             "--dangerously-skip-permissions",
-            "--no-session-persistence",
         ]
 
+        # Persistent mode: keep the session on disk and resume it so context
+        # accumulates across tasks. Fresh mode stays fully clean-room.
+        if self.session_mode == "persistent":
+            if self._session_id:
+                cmd += ["--resume", self._session_id]
+        else:
+            cmd.append("--no-session-persistence")
+
         # stream-json requires the CLI's --verbose flag to emit per-event records
-        if self.save_events:
+        if want_stream:
             cmd.append("--verbose")
 
         # Clean-room baseline: block ALL skills and plugins from reaching the
@@ -124,10 +159,13 @@ class ClaudeCodeBackend(AgentBackend):
         # (e.g. when the harness is run from within a Claude Code session)
         env = {k: v for k, v in os.environ.items() if k != "CLAUDECODE"}
 
+        # Stream to files whenever we want the event stream (save_events or
+        # persistent) — this both persists the audit trail and prevents a full
+        # OS pipe buffer from deadlocking claude on large verbose output.
         events_path = workspace / "events.jsonl"
         stderr_path = workspace / "events.stderr.log"
-        events_fh = open(events_path, "wb") if self.save_events else None
-        stderr_fh = open(stderr_path, "wb") if self.save_events else None
+        events_fh = open(events_path, "wb") if want_stream else None
+        stderr_fh = open(stderr_path, "wb") if want_stream else None
 
         start_time = time.monotonic()
         try:
@@ -179,11 +217,20 @@ class ClaudeCodeBackend(AgentBackend):
                     f"for {task_id_str}: {stderr[:200]}"
                 )
 
-            if self.save_events:
+            if want_stream:
                 metadata = self._parse_stream_json(stdout)
             else:
                 metadata = self._parse_output(stdout)
-            task_id = int(str(task_id_str).split("_")[-1])
+
+            # Persistent mode: remember the session id so the next task can
+            # --resume it. Update even if --resume forked a fresh id. (Safe:
+            # persistent runs are single-threaded, so no race on self.)
+            if self.session_mode == "persistent":
+                self._session_id = (
+                    metadata.get("session_id") or self._session_id
+                )
+
+            task_id = parsed_task_id
 
             # Loud warning when a task burns through more turns than we
             # asked for — the CLI doesn't enforce the cap, so we surface
@@ -205,6 +252,8 @@ class ClaudeCodeBackend(AgentBackend):
                 num_turns=metadata.get("num_turns"),
                 input_tokens=metadata.get("input_tokens"),
                 output_tokens=metadata.get("output_tokens"),
+                context_tokens=metadata.get("context_tokens"),
+                context_window_tokens=metadata.get("context_window_tokens"),
                 cost_usd=metadata.get("cost_usd"),
                 raw_output=stdout,
                 error=stderr if process.returncode != 0 else None,
@@ -214,7 +263,7 @@ class ClaudeCodeBackend(AgentBackend):
 
         except asyncio.TimeoutError:
             wall_time = time.monotonic() - start_time
-            task_id = int(str(task_id_str).split("_")[-1])
+            task_id = parsed_task_id
             logger.warning(
                 f"Claude Code timed out for {task_id_str} "
                 f"after {wall_time:.1f}s"
@@ -243,6 +292,7 @@ class ClaudeCodeBackend(AgentBackend):
                 "num_turns": data.get("num_turns"),
                 "input_tokens": usage.get("input_tokens"),
                 "output_tokens": usage.get("output_tokens"),
+                "context_tokens": _context_tokens(usage),
                 "cost_usd": data.get("total_cost_usd"),
                 "result_text": data.get("result", ""),
             }
@@ -260,6 +310,10 @@ class ClaudeCodeBackend(AgentBackend):
         as the single-shot json format.
         """
         result_event: Dict[str, Any] = {}
+        # Track the last assistant turn's input side — this is the true
+        # end-of-task context-window size (what the next task carries), as
+        # opposed to the result-level usage which SUMS input over every turn.
+        last_window: Optional[int] = None
         for line in stdout.strip().split("\n"):
             line = line.strip()
             if not line:
@@ -268,6 +322,10 @@ class ClaudeCodeBackend(AgentBackend):
                 event = json.loads(line)
             except (json.JSONDecodeError, TypeError):
                 continue
+            if event.get("type") == "assistant":
+                turn_usage = event.get("message", {}).get("usage", {})
+                if turn_usage:
+                    last_window = _context_tokens(turn_usage)
             if event.get("type") == "result":
                 result_event = event
 
@@ -281,6 +339,134 @@ class ClaudeCodeBackend(AgentBackend):
             "num_turns": result_event.get("num_turns"),
             "input_tokens": usage.get("input_tokens"),
             "output_tokens": usage.get("output_tokens"),
+            # Billed input, summed across turns (matches total_cost_usd).
+            "context_tokens": _context_tokens(usage),
+            # True carried-context window (last turn); the compaction trigger.
+            "context_window_tokens": last_window,
             "cost_usd": result_event.get("total_cost_usd"),
             "result_text": result_event.get("result", ""),
+        }
+
+    async def _run_session_turn(
+        self, message: str, workspace: Path
+    ) -> Dict[str, Any]:
+        """Run a single --resume turn (json output) against the live session.
+
+        Used for out-of-band maintenance turns like compaction. Returns the
+        parsed metadata dict plus a "returncode" key.
+        """
+        cmd = [
+            "claude",
+            "-p",
+            message,
+            "--model",
+            self.model,
+            "--output-format",
+            "json",
+            "--dangerously-skip-permissions",
+            "--resume",
+            self._session_id,
+        ]
+        if self.no_skills:
+            cmd += ["--disable-slash-commands", "--setting-sources",
+                    "project,local"]
+
+        env = {k: v for k, v in os.environ.items() if k != "CLAUDECODE"}
+        process = await asyncio.create_subprocess_exec(
+            *cmd,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+            cwd=str(workspace),
+            env=env,
+        )
+        stdout_bytes, _ = await asyncio.wait_for(
+            process.communicate(), timeout=self.timeout
+        )
+        metadata = self._parse_output(
+            stdout_bytes.decode("utf-8", errors="replace")
+        )
+        metadata["returncode"] = process.returncode
+        return metadata
+
+    async def maybe_compact(
+        self,
+        last_window_tokens,
+        position: int,
+        workspace: Path,
+    ):
+        """Eagerly compact the persistent session between tasks.
+
+        When the carried context (approximated by the last task's input tokens)
+        exceeds ``self.compact_threshold``, drive an explicit /compact turn so
+        the *next* task starts from a summarized context. This preempts the
+        CLI's native auto-compaction (which would otherwise fire mid-task near
+        the ~1M window). If /compact is not honored in headless mode, fall back
+        to a we-driven summarize-and-reseed turn; if that also fails, log loudly
+        rather than silently deferring to native auto-compaction.
+
+        Returns a record ``{position, task_id?, before_tokens, after_tokens,
+        method}`` or None if no compaction was performed.
+        """
+        if self.session_mode != "persistent" or not self.compact_threshold:
+            return None
+        if (not last_window_tokens
+                or last_window_tokens <= self.compact_threshold):
+            return None
+        if not self._session_id:
+            return None
+
+        before = last_window_tokens
+        logger.info(
+            f"Eager compaction at position {position}: carried context "
+            f"~{before} tokens > threshold {self.compact_threshold}"
+        )
+
+        # Primary: the CLI's built-in /compact slash command.
+        method = "compact"
+        try:
+            meta = await self._run_session_turn("/compact", workspace)
+            if meta.get("returncode") != 0:
+                raise RuntimeError(f"/compact returned {meta.get('returncode')}")
+        except Exception as e:
+            logger.warning(
+                f"/compact failed in headless mode ({e}); falling back to a "
+                f"summarize-and-reseed turn"
+            )
+            method = "summarize-reseed"
+            try:
+                meta = await self._run_session_turn(
+                    "We are pausing between tasks. Summarize concisely "
+                    "everything worth remembering for the tasks ahead: q "
+                    "idioms that worked, mistakes to avoid, and quirks of the "
+                    "test harness. We will continue from this summary.",
+                    workspace,
+                )
+                if meta.get("returncode") != 0:
+                    raise RuntimeError(
+                        f"summarize turn returned {meta.get('returncode')}"
+                    )
+            except Exception as e2:
+                # Do NOT silently fall back to native auto-compaction.
+                logger.error(
+                    f"Eager compaction FAILED at position {position} "
+                    f"(both /compact and summarize-reseed): {e2}. Context will "
+                    f"keep growing and the CLI may auto-compact mid-task."
+                )
+                return {
+                    "position": position,
+                    "before_tokens": before,
+                    "after_tokens": None,
+                    "method": "failed",
+                }
+
+        # Track a possibly-forked session id from the maintenance turn.
+        self._session_id = meta.get("session_id") or self._session_id
+        return {
+            "position": position,
+            "before_tokens": before,
+            # The compaction turn itself still reads the full pre-compaction
+            # context, so its own usage isn't the post size. The real drop shows
+            # up as the NEXT task's context_tokens in the learning curve.
+            "after_tokens": None,
+            "method": method,
         }

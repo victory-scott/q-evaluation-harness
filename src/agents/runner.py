@@ -2,8 +2,9 @@
 
 import asyncio
 import logging
+import math
+import random
 import shutil
-from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -36,6 +37,8 @@ async def run_agent_evaluation(
     concurrency: int = 4,
     keep_workspaces: bool = False,
     problem_ids: Optional[List[int]] = None,
+    session_mode: str = "fresh",
+    shuffle_seed: Optional[int] = None,
 ) -> Dict[str, Any]:
     """Run a full agent evaluation: scaffold -> invoke -> score.
 
@@ -46,6 +49,12 @@ async def run_agent_evaluation(
         concurrency: Maximum parallel agent invocations.
         keep_workspaces: If True, preserve workspace directories for debugging.
         problem_ids: Optional subset of task IDs to evaluate.
+        session_mode: "fresh" (clean-room, parallel, one session per task) or
+            "persistent" (one resumed session across all tasks, sequential, one
+            shared workspace, eager compaction between tasks).
+        shuffle_seed: If set, deterministically permute task order (useful for
+            checking whether the persistent-mode learning curve survives
+            reordering).
 
     Returns:
         Results summary dict with standard + agent-specific metrics.
@@ -66,10 +75,25 @@ async def run_agent_evaluation(
         problems = [p for p in problems if p.get("task_id") in problem_ids]
         logger.info(f"Filtered to {len(problems)} problems by ID")
 
+    # Establish the execution order (and record it so results are reproducible).
+    ordered_problems = list(problems)
+    if shuffle_seed is not None:
+        random.Random(shuffle_seed).shuffle(ordered_problems)
+    task_order = [p.get("task_id") for p in ordered_problems]
+    position_by_task = {tid: i for i, tid in enumerate(task_order)}
+
+    # A resumable session can't be continued in parallel — force sequential.
+    if session_mode == "persistent" and concurrency != 1:
+        logger.warning(
+            "Persistent session mode runs sequentially; forcing concurrency=1 "
+            f"(was {concurrency})."
+        )
+        concurrency = 1
+
     logger.info(
-        f"Agent evaluation: {len(problems)} problems, "
+        f"Agent evaluation: {len(ordered_problems)} problems, "
         f"backend={backend.name}, model={backend.model}, "
-        f"concurrency={concurrency}"
+        f"session_mode={session_mode}, concurrency={concurrency}"
     )
 
     # Setup output paths
@@ -112,6 +136,10 @@ async def run_agent_evaluation(
         ),
     )
 
+    # Persistent mode shares one workspace across every task so the agent
+    # accumulates files/notes; fresh mode keeps the per-task task_N dirs.
+    shared_workspace_name = "session" if session_mode == "persistent" else None
+
     async def solve_problem(problem: Dict[str, Any]) -> AgentResult:
         nonlocal completed_count, ok_count, no_solution_count, total_cost
         async with semaphore:
@@ -121,10 +149,14 @@ async def run_agent_evaluation(
             prompt_text = _build_agent_prompt(problem, template)
 
             workspace = backend.prepare_workspace(
-                problem, workspaces_dir, prompt_text
+                problem, workspaces_dir, prompt_text,
+                workspace_name=shared_workspace_name,
             )
 
             agent_result = await backend.invoke(prompt_text, workspace)
+            # The shared "session" workspace name can't encode the task id, so
+            # stamp the real one from the problem dict (harmless in fresh mode).
+            agent_result.task_id = task_id
 
             solution_code = backend.extract_solution(workspace, entry_point)
             agent_result.solution_code = solution_code
@@ -166,9 +198,30 @@ async def run_agent_evaluation(
 
             return agent_result
 
-    logger.info("Phase 1: Invoking agents...")
-    tasks = [solve_problem(p) for p in problems]
-    gathered = await asyncio.gather(*tasks, return_exceptions=True)
+    compactions: List[Dict[str, Any]] = []
+    if session_mode == "persistent":
+        # Sequential: one resumed session, one shared workspace, eager
+        # compaction between tasks. Order is fixed by ordered_problems.
+        logger.info("Phase 1: Invoking agents sequentially (persistent)...")
+        shared_ws = workspaces_dir / "session"
+        gathered: List[Any] = []
+        for position, problem in enumerate(ordered_problems):
+            try:
+                result: Any = await solve_problem(problem)
+            except Exception as exc:  # noqa: BLE001 — mirror gather semantics
+                result = exc
+            gathered.append(result)
+            if not isinstance(result, Exception):
+                record = await backend.maybe_compact(
+                    result.context_window_tokens, position, shared_ws
+                )
+                if record:
+                    record.setdefault("task_id", result.task_id)
+                    compactions.append(record)
+    else:
+        logger.info("Phase 1: Invoking agents...")
+        tasks = [solve_problem(p) for p in ordered_problems]
+        gathered = await asyncio.gather(*tasks, return_exceptions=True)
 
     pbar.close()
 
@@ -182,7 +235,7 @@ async def run_agent_evaluation(
             logger.error(f"Problem {i} raised exception: {result}")
             valid_results.append(
                 AgentResult(
-                    task_id=problems[i].get("task_id", i),
+                    task_id=ordered_problems[i].get("task_id", i),
                     success=False,
                     solution_code="",
                     wall_time_seconds=0.0,
@@ -214,6 +267,7 @@ async def run_agent_evaluation(
                 {
                     "task_id": task_id,
                     "sample_index": 0,
+                    "sequence_position": position_by_task.get(task_id),
                     "passed": False,
                     "error": agent_result.error or "No solution produced",
                     "agent_wall_time": agent_result.wall_time_seconds,
@@ -239,6 +293,7 @@ async def run_agent_evaluation(
                 {
                     "task_id": task_id,
                     "sample_index": 0,
+                    "sequence_position": position_by_task.get(task_id),
                     "passed": passed,
                     "info": info,
                     # Infra error (q startup/license) — not a wrong answer.
@@ -248,6 +303,9 @@ async def run_agent_evaluation(
                     "agent_cost_usd": agent_result.cost_usd,
                     "agent_input_tokens": agent_result.input_tokens,
                     "agent_output_tokens": agent_result.output_tokens,
+                    "agent_billed_input_tokens": agent_result.context_tokens,
+                    "agent_context_window_tokens":
+                        agent_result.context_window_tokens,
                 }
             )
         except Exception as e:
@@ -255,6 +313,7 @@ async def run_agent_evaluation(
                 {
                     "task_id": task_id,
                     "sample_index": 0,
+                    "sequence_position": position_by_task.get(task_id),
                     "passed": False,
                     "error": f"Execution error: {str(e)}",
                     "agent_wall_time": agent_result.wall_time_seconds,
@@ -265,7 +324,10 @@ async def run_agent_evaluation(
 
     # --- Phase 3: Calculate metrics ---
     summary = _calculate_agent_metrics(
-        execution_results, valid_results, backend, dataset
+        execution_results, valid_results, backend, dataset,
+        session_mode=session_mode,
+        task_order=task_order,
+        compactions=compactions,
     )
     summary["results"] = execution_results
 
@@ -302,13 +364,68 @@ def _build_agent_prompt(
     return agent_prompt
 
 
+def _build_learning_curve(
+    execution_results: List[Dict[str, Any]],
+    compactions: List[Dict[str, Any]],
+    num_bins: int = 4,
+) -> Dict[str, Any]:
+    """Pass-rate vs. execution position, to separate accumulation from leakage.
+
+    Emits per-task raw points (sorted by position), equal-size position bins
+    with their pass rate (errored tasks excluded), and the positions at which
+    eager compaction fired.
+    """
+    raw = [
+        {
+            "position": r.get("sequence_position"),
+            "task_id": r.get("task_id"),
+            "passed": bool(r.get("passed", False)),
+            "errored": bool(r.get("errored", False)),
+            # True carried-context window after this task — grows across the run
+            # and should drop right after a compaction_position.
+            "context_window_tokens": r.get("agent_context_window_tokens"),
+            # Billed input for the task (sum over turns); cost driver.
+            "billed_input_tokens": r.get("agent_billed_input_tokens"),
+        }
+        for r in execution_results
+        if r.get("sequence_position") is not None
+    ]
+    raw.sort(key=lambda x: x["position"])
+
+    scored = [x for x in raw if not x["errored"]]
+    bins: List[Dict[str, Any]] = []
+    if scored:
+        size = math.ceil(len(scored) / num_bins)
+        for i in range(0, len(scored), size):
+            chunk = scored[i:i + size]
+            positions = [c["position"] for c in chunk]
+            passed = sum(1 for c in chunk if c["passed"])
+            bins.append(
+                {
+                    "range": [min(positions), max(positions)],
+                    "n": len(chunk),
+                    "pass_rate": passed / len(chunk),
+                }
+            )
+
+    return {
+        "raw": raw,
+        "bins": bins,
+        "compaction_positions": [c.get("position") for c in compactions],
+    }
+
+
 def _calculate_agent_metrics(
     execution_results: List[Dict[str, Any]],
     agent_results: List[AgentResult],
     backend: AgentBackend,
     dataset: str,
+    session_mode: str = "fresh",
+    task_order: Optional[List[Any]] = None,
+    compactions: Optional[List[Dict[str, Any]]] = None,
 ) -> Dict[str, Any]:
     """Calculate standard + agent-specific metrics."""
+    compactions = compactions or []
     total = len(execution_results)
     # Errored solutions (q startup/license infra failures) are not wrong
     # answers — exclude them from pass/fail rather than counting them against
@@ -344,9 +461,24 @@ def _calculate_agent_metrics(
     ]
     costs = [r.cost_usd for r in agent_results if r.cost_usd is not None]
     turns = [r.num_turns for r in agent_results if r.num_turns is not None]
-    input_tokens_list = [
-        r.input_tokens for r in agent_results if r.input_tokens is not None
+    # Two distinct token quantities, kept separate to avoid the confusion that
+    # sank the naive "input_tokens" number:
+    #   * billed input  = input + cache_read + cache_creation SUMMED over every
+    #     turn of the task (context_tokens). Large — each turn re-reads the
+    #     cached context — but it's what drives total_cost_usd.
+    #   * context window = the last turn's input side (context_window_tokens):
+    #     the true "how much context is carried", ~tens of k, what compaction
+    #     acts on. This is the meaningful accumulation metric.
+    billed_input_list = [
+        r.context_tokens for r in agent_results if r.context_tokens is not None
     ]
+    window_list = [
+        r.context_window_tokens
+        for r in agent_results
+        if r.context_window_tokens is not None
+    ]
+    # Result-level output_tokens is already the per-task aggregate (verified
+    # larger than the per-event sum), so no summation needed.
     output_tokens_list = [
         r.output_tokens for r in agent_results if r.output_tokens is not None
     ]
@@ -382,6 +514,10 @@ def _calculate_agent_metrics(
         "agent_model": backend.model,
         "agent_max_turns": backend.max_turns,
         "dataset": dataset,
+        # Session/ordering metadata (persistent-mode experiment).
+        "session_mode": session_mode,
+        "task_order": task_order or [],
+        "compactions": compactions,
         # Agent-specific metrics
         "agent_metrics": {
             "total_wall_time_seconds": sum(wall_times) if wall_times else 0,
@@ -394,8 +530,17 @@ def _calculate_agent_metrics(
             "mean_cost_usd": _safe_mean(costs),
             "mean_turns": _safe_mean(turns),
             "median_turns": _safe_median(turns),
-            "mean_input_tokens": _safe_mean(input_tokens_list),
+            # Context window (the accumulation story): true carried context.
+            "mean_context_window_tokens": _safe_mean(window_list),
+            "max_context_window_tokens": max(window_list) if window_list
+            else None,
+            # Billed input (the cost story): summed over turns, matches cost.
+            "mean_billed_input_tokens": _safe_mean(billed_input_list),
+            "total_billed_input_tokens": sum(billed_input_list)
+            if billed_input_list else None,
             "mean_output_tokens": _safe_mean(output_tokens_list),
+            "total_output_tokens": sum(output_tokens_list)
+            if output_tokens_list else None,
             "no_solution_count": no_solution_count,
             "timeout_count": sum(
                 1
@@ -404,6 +549,10 @@ def _calculate_agent_metrics(
             ),
             # q startup/license infra errors — excluded from pass/fail above.
             "errored_count": errored,
+            # Pass-rate vs. execution position + compaction markers.
+            "learning_curve": _build_learning_curve(
+                execution_results, compactions
+            ),
         },
     }
 

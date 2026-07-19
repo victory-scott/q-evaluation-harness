@@ -23,6 +23,8 @@ def create_agent_backend(
     skill_dirs: Optional[List[str]] = None,
     save_events: bool = False,
     no_skills: bool = False,
+    session_mode: str = "fresh",
+    compact_threshold: int = 250000,
     **kwargs: Any,
 ) -> AgentBackend:
     """Create an agent backend instance.
@@ -60,6 +62,8 @@ def create_agent_backend(
         skill_dirs=skill_dirs,
         save_events=save_events,
         no_skills=no_skills,
+        session_mode=session_mode,
+        compact_threshold=compact_threshold,
         **kwargs,
     )
 

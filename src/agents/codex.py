@@ -65,6 +65,8 @@ class CodexBackend(AgentBackend):
         skill_dirs: Optional[List[str]] = None,
         save_events: bool = False,
         no_skills: bool = False,
+        session_mode: str = "fresh",
+        compact_threshold: int = 250000,
     ) -> None:
         super().__init__(
             model=model,
@@ -75,6 +77,8 @@ class CodexBackend(AgentBackend):
             skill_dirs=skill_dirs,
             save_events=save_events,
             no_skills=no_skills,
+            session_mode=session_mode,
+            compact_threshold=compact_threshold,
         )
         self.reasoning_effort = reasoning_effort
 

@@ -22,6 +22,13 @@ class AgentResult:
     num_turns: Optional[int] = None
     input_tokens: Optional[int] = None
     output_tokens: Optional[int] = None
+    # Billed input tokens for the task, summed across every turn
+    # (input + cache_read + cache_creation per turn). Matches total_cost_usd;
+    # large because each turn re-reads the cached context. NOT the window size.
+    context_tokens: Optional[int] = None
+    # True end-of-task context-window size (last turn's input side) — the real
+    # "how much context is carried", and what compaction triggers on.
+    context_window_tokens: Optional[int] = None
     cost_usd: Optional[float] = None
     raw_output: Optional[str] = None
     error: Optional[str] = None
@@ -46,6 +53,8 @@ class AgentBackend(ABC):
         skill_dirs: Optional[List[str]] = None,
         save_events: bool = False,
         no_skills: bool = False,
+        session_mode: str = "fresh",
+        compact_threshold: int = 250000,
     ) -> None:
         self.model = model
         self.max_turns = max_turns
@@ -59,6 +68,14 @@ class AgentBackend(ABC):
         self.no_skills = no_skills
         self.skill_dirs = [] if no_skills else (skill_dirs or [])
         self.save_events = save_events
+        # session_mode: "fresh" = clean-room, one session per task (default,
+        # parallel). "persistent" = one long-running session resumed across all
+        # tasks (sequential); backends that support it carry self._session_id.
+        self.session_mode = session_mode
+        # Eager-compaction threshold (carried-context input tokens). Only the
+        # persistent path consults this; 0 disables it. See maybe_compact().
+        self.compact_threshold = compact_threshold
+        self._session_id: Optional[str] = None
 
     @property
     @abstractmethod
@@ -98,6 +115,24 @@ class AgentBackend(ABC):
         """
         return ""
 
+    async def maybe_compact(
+        self,
+        last_window_tokens: Optional[int],
+        position: int,
+        workspace: Path,
+    ) -> Optional[Dict[str, Any]]:
+        """Eagerly compact the persistent session between tasks.
+
+        Called by the runner after each task in persistent mode with the true
+        end-of-task context-window size (AgentResult.context_window_tokens — NOT
+        the billed sum-over-turns). Backends that support a resumable session
+        (Claude Code) override this to drive an explicit compaction turn once
+        that window exceeds ``self.compact_threshold``. The default is a no-op.
+
+        Returns a compaction record dict (or None if nothing was done).
+        """
+        return None
+
     @staticmethod
     def _merge_instructions(default: str, user: str) -> str:
         """Merge default and user-provided instructions."""
@@ -109,6 +144,7 @@ class AgentBackend(ABC):
         problem: Dict[str, Any],
         base_dir: Path,
         prompt_text: str,
+        workspace_name: Optional[str] = None,
     ) -> Path:
         """Scaffold a per-problem workspace directory.
 
@@ -116,12 +152,19 @@ class AgentBackend(ABC):
             problem: Problem dict from the dataset.
             base_dir: Parent directory for all workspaces.
             prompt_text: The formatted prompt to give the agent.
+            workspace_name: Fixed directory name to reuse across tasks (used by
+                the persistent session mode so all tasks share one workspace and
+                the agent accumulates files). Defaults to a per-task
+                ``task_{id}`` dir. problem.md and the solution.q stub are
+                (re)written each call regardless, so every task gets a clean
+                target while other accumulated files survive.
 
         Returns:
             Path to the created workspace directory.
         """
         task_id = problem.get("task_id", "unknown")
-        workspace = base_dir / f"task_{task_id}"
+        dir_name = workspace_name if workspace_name else f"task_{task_id}"
+        workspace = base_dir / dir_name
         workspace.mkdir(parents=True, exist_ok=True)
 
         # Write the prompt/problem description
@@ -192,7 +235,11 @@ class AgentBackend(ABC):
                     break
 
         if not solution_file.exists():
-            # Last resort: search for any .q file
+            # Last resort: search for any .q file. NB: in persistent mode the
+            # workspace is shared across tasks, so this glob could pick up a
+            # stale helper .q from a prior task. The primary solution.q path is
+            # reset each task, so this only bites if the agent stops writing
+            # solution.q for a given task — acceptable for the exploratory mode.
             q_files = list(workspace.glob("*.q"))
             if q_files:
                 solution_file = q_files[0]

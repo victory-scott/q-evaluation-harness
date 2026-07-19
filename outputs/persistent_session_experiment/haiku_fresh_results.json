@@ -1,0 +1,4838 @@
+{
+  "total_solutions": 164,
+  "passed_solutions": 98,
+  "errored_solutions": 0,
+  "scored_solutions": 164,
+  "pass_rate": 0.5975609756097561,
+  "total_problems": 164,
+  "pass_at_1": 0.5975609756097561,
+  "per_problem_results": [
+    {
+      "task_id": 0,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 1,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 2,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 3,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 4,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 5,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 6,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 7,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 8,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 9,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 10,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 11,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 12,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 13,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 14,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 15,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 16,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 17,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 18,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 19,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 20,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 21,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 22,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 23,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 24,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 25,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 26,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 27,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 28,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 29,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 30,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 31,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 32,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 33,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 34,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 35,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 36,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 37,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 38,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 39,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 40,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 41,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 42,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 43,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 44,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 45,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 46,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 47,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 48,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 49,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 50,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 51,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 52,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 53,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 54,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 55,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 56,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 57,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 58,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 59,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 60,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 61,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 62,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 63,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 64,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 65,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 66,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 67,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 68,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 69,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 70,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 71,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 72,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 73,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 74,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 75,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 76,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 77,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 78,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 79,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 80,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 81,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 82,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 83,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 84,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 85,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 86,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 87,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 88,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 89,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 90,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 91,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 92,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 93,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 94,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 95,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 96,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 97,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 98,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 99,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 100,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 101,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 102,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 103,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 104,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 105,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 106,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 107,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 108,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 109,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 110,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 111,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 112,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 113,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 114,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 115,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 116,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 117,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 118,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 119,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 120,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 121,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 122,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 123,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 124,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 125,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 126,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 127,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 128,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 129,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 130,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 131,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 132,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 133,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 134,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 135,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 136,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 137,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 138,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 139,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 140,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 141,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 142,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 143,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 144,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 145,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 146,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 147,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 148,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 149,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 150,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 151,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 152,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 153,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 154,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 155,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 156,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 157,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 158,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 159,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 160,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 161,
+      "num_samples": 1,
+      "num_correct": 1
+    },
+    {
+      "task_id": 162,
+      "num_samples": 1,
+      "num_correct": 0
+    },
+    {
+      "task_id": 163,
+      "num_samples": 1,
+      "num_correct": 0
+    }
+  ],
+  "evaluation_type": "agent",
+  "agent_backend": "claude-code",
+  "agent_model": "haiku",
+  "agent_max_turns": 20,
+  "dataset": "q-humaneval",
+  "session_mode": "fresh",
+  "task_order": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163
+  ],
+  "compactions": [],
+  "agent_metrics": {
+    "total_wall_time_seconds": 25968.423103342648,
+    "mean_wall_time_seconds": 158.34404331306493,
+    "median_wall_time_seconds": 134.1576842085051,
+    "p90_wall_time_seconds": 300.0217361249961,
+    "mean_wall_time_passed": 106.04826623012136,
+    "mean_wall_time_failed": 235.9953486786478,
+    "total_cost_usd": 12.810457,
+    "mean_cost_usd": 0.10765089915966386,
+    "mean_turns": 15.134453781512605,
+    "median_turns": 11,
+    "mean_context_window_tokens": 33352.899159663866,
+    "max_context_window_tokens": 55699,
+    "mean_billed_input_tokens": 490198.2100840336,
+    "total_billed_input_tokens": 58333587,
+    "mean_output_tokens": 5555.899159663865,
+    "total_output_tokens": 661152,
+    "no_solution_count": 0,
+    "timeout_count": 45,
+    "errored_count": 0,
+    "learning_curve": {
+      "raw": [
+        {
+          "position": 0,
+          "task_id": 0,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 32202,
+          "billed_input_tokens": 245284
+        },
+        {
+          "position": 1,
+          "task_id": 1,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 32352,
+          "billed_input_tokens": 368621
+        },
+        {
+          "position": 2,
+          "task_id": 2,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 30918,
+          "billed_input_tokens": 378675
+        },
+        {
+          "position": 3,
+          "task_id": 3,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30202,
+          "billed_input_tokens": 343799
+        },
+        {
+          "position": 4,
+          "task_id": 4,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29594,
+          "billed_input_tokens": 197795
+        },
+        {
+          "position": 5,
+          "task_id": 5,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 6,
+          "task_id": 6,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 7,
+          "task_id": 7,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29783,
+          "billed_input_tokens": 313601
+        },
+        {
+          "position": 8,
+          "task_id": 8,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 29672,
+          "billed_input_tokens": 397787
+        },
+        {
+          "position": 9,
+          "task_id": 9,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 10,
+          "task_id": 10,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 11,
+          "task_id": 11,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 12,
+          "task_id": 12,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 32187,
+          "billed_input_tokens": 446654
+        },
+        {
+          "position": 13,
+          "task_id": 13,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29038,
+          "billed_input_tokens": 223663
+        },
+        {
+          "position": 14,
+          "task_id": 14,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 36486,
+          "billed_input_tokens": 556296
+        },
+        {
+          "position": 15,
+          "task_id": 15,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30170,
+          "billed_input_tokens": 341226
+        },
+        {
+          "position": 16,
+          "task_id": 16,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 28595,
+          "billed_input_tokens": 221623
+        },
+        {
+          "position": 17,
+          "task_id": 17,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 18,
+          "task_id": 18,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 19,
+          "task_id": 19,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30426,
+          "billed_input_tokens": 262678
+        },
+        {
+          "position": 20,
+          "task_id": 20,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 32741,
+          "billed_input_tokens": 302303
+        },
+        {
+          "position": 21,
+          "task_id": 21,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29097,
+          "billed_input_tokens": 224576
+        },
+        {
+          "position": 22,
+          "task_id": 22,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 34038,
+          "billed_input_tokens": 896583
+        },
+        {
+          "position": 23,
+          "task_id": 23,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 28400,
+          "billed_input_tokens": 220603
+        },
+        {
+          "position": 24,
+          "task_id": 24,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29868,
+          "billed_input_tokens": 172256
+        },
+        {
+          "position": 25,
+          "task_id": 25,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 32226,
+          "billed_input_tokens": 453226
+        },
+        {
+          "position": 26,
+          "task_id": 26,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 34234,
+          "billed_input_tokens": 677957
+        },
+        {
+          "position": 27,
+          "task_id": 27,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 32630,
+          "billed_input_tokens": 451076
+        },
+        {
+          "position": 28,
+          "task_id": 28,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 30508,
+          "billed_input_tokens": 431951
+        },
+        {
+          "position": 29,
+          "task_id": 29,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29676,
+          "billed_input_tokens": 282482
+        },
+        {
+          "position": 30,
+          "task_id": 30,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29188,
+          "billed_input_tokens": 280667
+        },
+        {
+          "position": 31,
+          "task_id": 31,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 51254,
+          "billed_input_tokens": 1843674
+        },
+        {
+          "position": 32,
+          "task_id": 32,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 33,
+          "task_id": 33,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 40020,
+          "billed_input_tokens": 845397
+        },
+        {
+          "position": 34,
+          "task_id": 34,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 28956,
+          "billed_input_tokens": 251159
+        },
+        {
+          "position": 35,
+          "task_id": 35,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29337,
+          "billed_input_tokens": 308685
+        },
+        {
+          "position": 36,
+          "task_id": 36,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 37,
+          "task_id": 37,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 34826,
+          "billed_input_tokens": 348718
+        },
+        {
+          "position": 38,
+          "task_id": 38,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 39,
+          "task_id": 39,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 40,
+          "task_id": 40,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 35956,
+          "billed_input_tokens": 557891
+        },
+        {
+          "position": 41,
+          "task_id": 41,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 28872,
+          "billed_input_tokens": 167535
+        },
+        {
+          "position": 42,
+          "task_id": 42,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 28681,
+          "billed_input_tokens": 249241
+        },
+        {
+          "position": 43,
+          "task_id": 43,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 37072,
+          "billed_input_tokens": 555415
+        },
+        {
+          "position": 44,
+          "task_id": 44,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 55699,
+          "billed_input_tokens": 2209411
+        },
+        {
+          "position": 45,
+          "task_id": 45,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 28438,
+          "billed_input_tokens": 192727
+        },
+        {
+          "position": 46,
+          "task_id": 46,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 31259,
+          "billed_input_tokens": 208152
+        },
+        {
+          "position": 47,
+          "task_id": 47,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30855,
+          "billed_input_tokens": 323454
+        },
+        {
+          "position": 48,
+          "task_id": 48,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29918,
+          "billed_input_tokens": 285447
+        },
+        {
+          "position": 49,
+          "task_id": 49,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 39291,
+          "billed_input_tokens": 836431
+        },
+        {
+          "position": 50,
+          "task_id": 50,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 51,
+          "task_id": 51,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29501,
+          "billed_input_tokens": 227910
+        },
+        {
+          "position": 52,
+          "task_id": 52,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 28671,
+          "billed_input_tokens": 222105
+        },
+        {
+          "position": 53,
+          "task_id": 53,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 28336,
+          "billed_input_tokens": 220228
+        },
+        {
+          "position": 54,
+          "task_id": 54,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30095,
+          "billed_input_tokens": 259241
+        },
+        {
+          "position": 55,
+          "task_id": 55,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29748,
+          "billed_input_tokens": 284369
+        },
+        {
+          "position": 56,
+          "task_id": 56,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 31803,
+          "billed_input_tokens": 393048
+        },
+        {
+          "position": 57,
+          "task_id": 57,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 34007,
+          "billed_input_tokens": 647207
+        },
+        {
+          "position": 58,
+          "task_id": 58,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 30264,
+          "billed_input_tokens": 429884
+        },
+        {
+          "position": 59,
+          "task_id": 59,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29951,
+          "billed_input_tokens": 285067
+        },
+        {
+          "position": 60,
+          "task_id": 60,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 31577,
+          "billed_input_tokens": 404115
+        },
+        {
+          "position": 61,
+          "task_id": 61,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 32676,
+          "billed_input_tokens": 340644
+        },
+        {
+          "position": 62,
+          "task_id": 62,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30942,
+          "billed_input_tokens": 320927
+        },
+        {
+          "position": 63,
+          "task_id": 63,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 32122,
+          "billed_input_tokens": 244228
+        },
+        {
+          "position": 64,
+          "task_id": 64,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30826,
+          "billed_input_tokens": 382354
+        },
+        {
+          "position": 65,
+          "task_id": 65,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30756,
+          "billed_input_tokens": 266050
+        },
+        {
+          "position": 66,
+          "task_id": 66,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30796,
+          "billed_input_tokens": 294548
+        },
+        {
+          "position": 67,
+          "task_id": 67,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 32234,
+          "billed_input_tokens": 453098
+        },
+        {
+          "position": 68,
+          "task_id": 68,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 69,
+          "task_id": 69,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 70,
+          "task_id": 70,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 71,
+          "task_id": 71,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 40250,
+          "billed_input_tokens": 1100233
+        },
+        {
+          "position": 72,
+          "task_id": 72,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29211,
+          "billed_input_tokens": 252372
+        },
+        {
+          "position": 73,
+          "task_id": 73,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30939,
+          "billed_input_tokens": 296453
+        },
+        {
+          "position": 74,
+          "task_id": 74,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 36280,
+          "billed_input_tokens": 808671
+        },
+        {
+          "position": 75,
+          "task_id": 75,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30837,
+          "billed_input_tokens": 263962
+        },
+        {
+          "position": 76,
+          "task_id": 76,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 77,
+          "task_id": 77,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 37083,
+          "billed_input_tokens": 893468
+        },
+        {
+          "position": 78,
+          "task_id": 78,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29868,
+          "billed_input_tokens": 201015
+        },
+        {
+          "position": 79,
+          "task_id": 79,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 34826,
+          "billed_input_tokens": 299117
+        },
+        {
+          "position": 80,
+          "task_id": 80,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 36617,
+          "billed_input_tokens": 606352
+        },
+        {
+          "position": 81,
+          "task_id": 81,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 34840,
+          "billed_input_tokens": 263412
+        },
+        {
+          "position": 82,
+          "task_id": 82,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 36328,
+          "billed_input_tokens": 609303
+        },
+        {
+          "position": 83,
+          "task_id": 83,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 34297,
+          "billed_input_tokens": 354773
+        },
+        {
+          "position": 84,
+          "task_id": 84,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 37400,
+          "billed_input_tokens": 781786
+        },
+        {
+          "position": 85,
+          "task_id": 85,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30432,
+          "billed_input_tokens": 289642
+        },
+        {
+          "position": 86,
+          "task_id": 86,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 31043,
+          "billed_input_tokens": 354436
+        },
+        {
+          "position": 87,
+          "task_id": 87,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 41285,
+          "billed_input_tokens": 1061765
+        },
+        {
+          "position": 88,
+          "task_id": 88,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 32000,
+          "billed_input_tokens": 594550
+        },
+        {
+          "position": 89,
+          "task_id": 89,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 90,
+          "task_id": 90,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 29099,
+          "billed_input_tokens": 224319
+        },
+        {
+          "position": 91,
+          "task_id": 91,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 92,
+          "task_id": 92,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 29983,
+          "billed_input_tokens": 315378
+        },
+        {
+          "position": 93,
+          "task_id": 93,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 94,
+          "task_id": 94,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 34742,
+          "billed_input_tokens": 503985
+        },
+        {
+          "position": 95,
+          "task_id": 95,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 96,
+          "task_id": 96,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 49883,
+          "billed_input_tokens": 2471186
+        },
+        {
+          "position": 97,
+          "task_id": 97,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 28881,
+          "billed_input_tokens": 167560
+        },
+        {
+          "position": 98,
+          "task_id": 98,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 34371,
+          "billed_input_tokens": 468884
+        },
+        {
+          "position": 99,
+          "task_id": 99,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 41218,
+          "billed_input_tokens": 1056289
+        },
+        {
+          "position": 100,
+          "task_id": 100,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30337,
+          "billed_input_tokens": 317965
+        },
+        {
+          "position": 101,
+          "task_id": 101,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 31321,
+          "billed_input_tokens": 297648
+        },
+        {
+          "position": 102,
+          "task_id": 102,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 30911,
+          "billed_input_tokens": 381751
+        },
+        {
+          "position": 103,
+          "task_id": 103,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 104,
+          "task_id": 104,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 105,
+          "task_id": 105,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30810,
+          "billed_input_tokens": 236699
+        },
+        {
+          "position": 106,
+          "task_id": 106,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 107,
+          "task_id": 107,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 36364,
+          "billed_input_tokens": 556060
+        },
+        {
+          "position": 108,
+          "task_id": 108,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 46524,
+          "billed_input_tokens": 1563225
+        },
+        {
+          "position": 109,
+          "task_id": 109,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 39029,
+          "billed_input_tokens": 825878
+        },
+        {
+          "position": 110,
+          "task_id": 110,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30002,
+          "billed_input_tokens": 229833
+        },
+        {
+          "position": 111,
+          "task_id": 111,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 112,
+          "task_id": 112,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29964,
+          "billed_input_tokens": 315889
+        },
+        {
+          "position": 113,
+          "task_id": 113,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 35845,
+          "billed_input_tokens": 638195
+        },
+        {
+          "position": 114,
+          "task_id": 114,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 115,
+          "task_id": 115,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30466,
+          "billed_input_tokens": 234037
+        },
+        {
+          "position": 116,
+          "task_id": 116,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 117,
+          "task_id": 117,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 33226,
+          "billed_input_tokens": 317633
+        },
+        {
+          "position": 118,
+          "task_id": 118,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 38455,
+          "billed_input_tokens": 766934
+        },
+        {
+          "position": 119,
+          "task_id": 119,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 42375,
+          "billed_input_tokens": 969316
+        },
+        {
+          "position": 120,
+          "task_id": 120,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 28981,
+          "billed_input_tokens": 223058
+        },
+        {
+          "position": 121,
+          "task_id": 121,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 122,
+          "task_id": 122,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 123,
+          "task_id": 123,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 124,
+          "task_id": 124,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 125,
+          "task_id": 125,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 126,
+          "task_id": 126,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 127,
+          "task_id": 127,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 42563,
+          "billed_input_tokens": 985510
+        },
+        {
+          "position": 128,
+          "task_id": 128,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29753,
+          "billed_input_tokens": 229476
+        },
+        {
+          "position": 129,
+          "task_id": 129,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 130,
+          "task_id": 130,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 131,
+          "task_id": 131,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30221,
+          "billed_input_tokens": 286735
+        },
+        {
+          "position": 132,
+          "task_id": 132,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 133,
+          "task_id": 133,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 35387,
+          "billed_input_tokens": 916401
+        },
+        {
+          "position": 134,
+          "task_id": 134,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 34695,
+          "billed_input_tokens": 451471
+        },
+        {
+          "position": 135,
+          "task_id": 135,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 136,
+          "task_id": 136,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 33007,
+          "billed_input_tokens": 399519
+        },
+        {
+          "position": 137,
+          "task_id": 137,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 138,
+          "task_id": 138,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 29904,
+          "billed_input_tokens": 230511
+        },
+        {
+          "position": 139,
+          "task_id": 139,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 30341,
+          "billed_input_tokens": 231893
+        },
+        {
+          "position": 140,
+          "task_id": 140,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 141,
+          "task_id": 141,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 36082,
+          "billed_input_tokens": 369868
+        },
+        {
+          "position": 142,
+          "task_id": 142,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 33969,
+          "billed_input_tokens": 403151
+        },
+        {
+          "position": 143,
+          "task_id": 143,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 144,
+          "task_id": 144,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 31144,
+          "billed_input_tokens": 326460
+        },
+        {
+          "position": 145,
+          "task_id": 145,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 146,
+          "task_id": 146,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 32303,
+          "billed_input_tokens": 274102
+        },
+        {
+          "position": 147,
+          "task_id": 147,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 44148,
+          "billed_input_tokens": 858053
+        },
+        {
+          "position": 148,
+          "task_id": 148,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 149,
+          "task_id": 149,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 35284,
+          "billed_input_tokens": 566547
+        },
+        {
+          "position": 150,
+          "task_id": 150,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 30621,
+          "billed_input_tokens": 262188
+        },
+        {
+          "position": 151,
+          "task_id": 151,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 44921,
+          "billed_input_tokens": 1604142
+        },
+        {
+          "position": 152,
+          "task_id": 152,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29243,
+          "billed_input_tokens": 224740
+        },
+        {
+          "position": 153,
+          "task_id": 153,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 37479,
+          "billed_input_tokens": 728165
+        },
+        {
+          "position": 154,
+          "task_id": 154,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 31661,
+          "billed_input_tokens": 388142
+        },
+        {
+          "position": 155,
+          "task_id": 155,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 35947,
+          "billed_input_tokens": 639249
+        },
+        {
+          "position": 156,
+          "task_id": 156,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 33514,
+          "billed_input_tokens": 375928
+        },
+        {
+          "position": 157,
+          "task_id": 157,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 31759,
+          "billed_input_tokens": 381826
+        },
+        {
+          "position": 158,
+          "task_id": 158,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": 39862,
+          "billed_input_tokens": 1277815
+        },
+        {
+          "position": 159,
+          "task_id": 159,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": 29894,
+          "billed_input_tokens": 258921
+        },
+        {
+          "position": 160,
+          "task_id": 160,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 161,
+          "task_id": 161,
+          "passed": true,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 162,
+          "task_id": 162,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        },
+        {
+          "position": 163,
+          "task_id": 163,
+          "passed": false,
+          "errored": false,
+          "context_window_tokens": null,
+          "billed_input_tokens": null
+        }
+      ],
+      "bins": [
+        {
+          "range": [
+            0,
+            40
+          ],
+          "n": 41,
+          "pass_rate": 0.5853658536585366
+        },
+        {
+          "range": [
+            41,
+            81
+          ],
+          "n": 41,
+          "pass_rate": 0.8048780487804879
+        },
+        {
+          "range": [
+            82,
+            122
+          ],
+          "n": 41,
+          "pass_rate": 0.5365853658536586
+        },
+        {
+          "range": [
+            123,
+            163
+          ],
+          "n": 41,
+          "pass_rate": 0.4634146341463415
+        }
+      ],
+      "compaction_positions": []
+    }
+  },
+  "results": [
+    {
+      "task_id": 0,
+      "sample_index": 0,
+      "sequence_position": 0,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 57.33490395802073,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.07848799999999999,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 5076,
+      "agent_billed_input_tokens": 245284,
+      "agent_context_window_tokens": 32202
+    },
+    {
+      "task_id": 1,
+      "sample_index": 0,
+      "sequence_position": 1,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 56.31041645799996,
+      "agent_num_turns": 12,
+      "agent_cost_usd": 0.09029750000000002,
+      "agent_input_tokens": 97,
+      "agent_output_tokens": 4903,
+      "agent_billed_input_tokens": 368621,
+      "agent_context_window_tokens": 32352
+    },
+    {
+      "task_id": 2,
+      "sample_index": 0,
+      "sequence_position": 2,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 160.90183037496172,
+      "agent_num_turns": 13,
+      "agent_cost_usd": 0.0805985,
+      "agent_input_tokens": 105,
+      "agent_output_tokens": 3308,
+      "agent_billed_input_tokens": 378675,
+      "agent_context_window_tokens": 30918
+    },
+    {
+      "task_id": 3,
+      "sample_index": 0,
+      "sequence_position": 3,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 38.55027462501312,
+      "agent_num_turns": 12,
+      "agent_cost_usd": 0.0723343,
+      "agent_input_tokens": 97,
+      "agent_output_tokens": 2627,
+      "agent_billed_input_tokens": 343799,
+      "agent_context_window_tokens": 30202
+    },
+    {
+      "task_id": 4,
+      "sample_index": 0,
+      "sequence_position": 4,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 28.754922458028886,
+      "agent_num_turns": 9,
+      "agent_cost_usd": 0.0548097,
+      "agent_input_tokens": 57,
+      "agent_output_tokens": 2287,
+      "agent_billed_input_tokens": 197795,
+      "agent_context_window_tokens": 29594
+    },
+    {
+      "task_id": 5,
+      "sample_index": 0,
+      "sequence_position": 5,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 300.0389414590318,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 6,
+      "sample_index": 0,
+      "sequence_position": 6,
+      "passed": false,
+      "info": "failed: Test execution failed: match",
+      "errored": false,
+      "agent_wall_time": 300.03714187501464,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 7,
+      "sample_index": 0,
+      "sequence_position": 7,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 35.126298249990214,
+      "agent_num_turns": 11,
+      "agent_cost_usd": 0.0675702,
+      "agent_input_tokens": 89,
+      "agent_output_tokens": 2445,
+      "agent_billed_input_tokens": 313601,
+      "agent_context_window_tokens": 29783
+    },
+    {
+      "task_id": 8,
+      "sample_index": 0,
+      "sequence_position": 8,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 43.563718708988745,
+      "agent_num_turns": 14,
+      "agent_cost_usd": 0.0767605,
+      "agent_input_tokens": 113,
+      "agent_output_tokens": 2634,
+      "agent_billed_input_tokens": 397787,
+      "agent_context_window_tokens": 29672
+    },
+    {
+      "task_id": 9,
+      "sample_index": 0,
+      "sequence_position": 9,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 300.04557641700376,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 10,
+      "sample_index": 0,
+      "sequence_position": 10,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 300.03915845800657,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 11,
+      "sample_index": 0,
+      "sequence_position": 11,
+      "passed": false,
+      "info": "failed: Test execution failed: type",
+      "errored": false,
+      "agent_wall_time": 300.0443680419703,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 12,
+      "sample_index": 0,
+      "sequence_position": 12,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 184.73999962495873,
+      "agent_num_turns": 15,
+      "agent_cost_usd": 0.0956639,
+      "agent_input_tokens": 121,
+      "agent_output_tokens": 4483,
+      "agent_billed_input_tokens": 446654,
+      "agent_context_window_tokens": 32187
+    },
+    {
+      "task_id": 13,
+      "sample_index": 0,
+      "sequence_position": 13,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 31.72162958298577,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.0556333,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 2144,
+      "agent_billed_input_tokens": 223663,
+      "agent_context_window_tokens": 29038
+    },
+    {
+      "task_id": 14,
+      "sample_index": 0,
+      "sequence_position": 14,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 233.4088887500111,
+      "agent_num_turns": 17,
+      "agent_cost_usd": 0.13568260000000001,
+      "agent_input_tokens": 137,
+      "agent_output_tokens": 8661,
+      "agent_billed_input_tokens": 556296,
+      "agent_context_window_tokens": 36486
+    },
+    {
+      "task_id": 15,
+      "sample_index": 0,
+      "sequence_position": 15,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 40.436636042024475,
+      "agent_num_turns": 12,
+      "agent_cost_usd": 0.07272619999999999,
+      "agent_input_tokens": 97,
+      "agent_output_tokens": 2775,
+      "agent_billed_input_tokens": 341226,
+      "agent_context_window_tokens": 30170
+    },
+    {
+      "task_id": 16,
+      "sample_index": 0,
+      "sequence_position": 16,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 26.62842837505741,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.052528599999999995,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 1737,
+      "agent_billed_input_tokens": 221623,
+      "agent_context_window_tokens": 28595
+    },
+    {
+      "task_id": 17,
+      "sample_index": 0,
+      "sequence_position": 17,
+      "passed": false,
+      "info": "failed: Test execution failed: c",
+      "errored": false,
+      "agent_wall_time": 300.0345117080142,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 18,
+      "sample_index": 0,
+      "sequence_position": 18,
+      "passed": false,
+      "info": "failed: Test execution failed: domain",
+      "errored": false,
+      "agent_wall_time": 300.0462026660098,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 19,
+      "sample_index": 0,
+      "sequence_position": 19,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 40.928712584020104,
+      "agent_num_turns": 9,
+      "agent_cost_usd": 0.0670522,
+      "agent_input_tokens": 73,
+      "agent_output_tokens": 3108,
+      "agent_billed_input_tokens": 262678,
+      "agent_context_window_tokens": 30426
+    },
+    {
+      "task_id": 20,
+      "sample_index": 0,
+      "sequence_position": 20,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 64.04978499998106,
+      "agent_num_turns": 14,
+      "agent_cost_usd": 0.08586540000000001,
+      "agent_input_tokens": 81,
+      "agent_output_tokens": 5205,
+      "agent_billed_input_tokens": 302303,
+      "agent_context_window_tokens": 32741
+    },
+    {
+      "task_id": 21,
+      "sample_index": 0,
+      "sequence_position": 21,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 29.74205300002359,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.0566937,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 2305,
+      "agent_billed_input_tokens": 224576,
+      "agent_context_window_tokens": 29097
+    },
+    {
+      "task_id": 22,
+      "sample_index": 0,
+      "sequence_position": 22,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 98.30658416700317,
+      "agent_num_turns": 29,
+      "agent_cost_usd": 0.1532555,
+      "agent_input_tokens": 233,
+      "agent_output_tokens": 6284,
+      "agent_billed_input_tokens": 896583,
+      "agent_context_window_tokens": 34038
+    },
+    {
+      "task_id": 23,
+      "sample_index": 0,
+      "sequence_position": 23,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 24.348790582967922,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.051082100000000005,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 1545,
+      "agent_billed_input_tokens": 220603,
+      "agent_context_window_tokens": 28400
+    },
+    {
+      "task_id": 24,
+      "sample_index": 0,
+      "sequence_position": 24,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 38.242480500019155,
+      "agent_num_turns": 6,
+      "agent_cost_usd": 0.0570062,
+      "agent_input_tokens": 49,
+      "agent_output_tokens": 3137,
+      "agent_billed_input_tokens": 172256,
+      "agent_context_window_tokens": 29868
+    },
+    {
+      "task_id": 25,
+      "sample_index": 0,
+      "sequence_position": 25,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 60.78369729197584,
+      "agent_num_turns": 15,
+      "agent_cost_usd": 0.0962732,
+      "agent_input_tokens": 121,
+      "agent_output_tokens": 4453,
+      "agent_billed_input_tokens": 453226,
+      "agent_context_window_tokens": 32226
+    },
+    {
+      "task_id": 26,
+      "sample_index": 0,
+      "sequence_position": 26,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 223.34747404203517,
+      "agent_num_turns": 22,
+      "agent_cost_usd": 0.1295789,
+      "agent_input_tokens": 177,
+      "agent_output_tokens": 5854,
+      "agent_billed_input_tokens": 677957,
+      "agent_context_window_tokens": 34234
+    },
+    {
+      "task_id": 27,
+      "sample_index": 0,
+      "sequence_position": 27,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 285.78194270899985,
+      "agent_num_turns": 15,
+      "agent_cost_usd": 0.0977718,
+      "agent_input_tokens": 121,
+      "agent_output_tokens": 4652,
+      "agent_billed_input_tokens": 451076,
+      "agent_context_window_tokens": 32630
+    },
+    {
+      "task_id": 28,
+      "sample_index": 0,
+      "sequence_position": 28,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 49.133959832950495,
+      "agent_num_turns": 15,
+      "agent_cost_usd": 0.0843085,
+      "agent_input_tokens": 121,
+      "agent_output_tokens": 3149,
+      "agent_billed_input_tokens": 431951,
+      "agent_context_window_tokens": 30508
+    },
+    {
+      "task_id": 29,
+      "sample_index": 0,
+      "sequence_position": 29,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 35.796277249988634,
+      "agent_num_turns": 10,
+      "agent_cost_usd": 0.0643478,
+      "agent_input_tokens": 81,
+      "agent_output_tokens": 2461,
+      "agent_billed_input_tokens": 282482,
+      "agent_context_window_tokens": 29676
+    },
+    {
+      "task_id": 30,
+      "sample_index": 0,
+      "sequence_position": 30,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 33.602575208002236,
+      "agent_num_turns": 10,
+      "agent_cost_usd": 0.061112099999999996,
+      "agent_input_tokens": 81,
+      "agent_output_tokens": 2045,
+      "agent_billed_input_tokens": 280667,
+      "agent_context_window_tokens": 29188
+    },
+    {
+      "task_id": 31,
+      "sample_index": 0,
+      "sequence_position": 31,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 223.6312119170325,
+      "agent_num_turns": 44,
+      "agent_cost_usd": 0.34711000000000003,
+      "agent_input_tokens": 353,
+      "agent_output_tokens": 19548,
+      "agent_billed_input_tokens": 1843674,
+      "agent_context_window_tokens": 51254
+    },
+    {
+      "task_id": 32,
+      "sample_index": 0,
+      "sequence_position": 32,
+      "passed": false,
+      "info": "failed: IPC execution error: Failed to create IPC function: mid",
+      "errored": false,
+      "agent_wall_time": 300.0408987500123,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 33,
+      "sample_index": 0,
+      "sequence_position": 33,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 258.74309866694966,
+      "agent_num_turns": 24,
+      "agent_cost_usd": 0.18254269999999997,
+      "agent_input_tokens": 193,
+      "agent_output_tokens": 10884,
+      "agent_billed_input_tokens": 845397,
+      "agent_context_window_tokens": 40020
+    },
+    {
+      "task_id": 34,
+      "sample_index": 0,
+      "sequence_position": 34,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 146.62199008400785,
+      "agent_num_turns": 9,
+      "agent_cost_usd": 0.0570353,
+      "agent_input_tokens": 73,
+      "agent_output_tokens": 1910,
+      "agent_billed_input_tokens": 251159,
+      "agent_context_window_tokens": 28956
+    },
+    {
+      "task_id": 35,
+      "sample_index": 0,
+      "sequence_position": 35,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 31.6829787910101,
+      "agent_num_turns": 11,
+      "agent_cost_usd": 0.06528320000000001,
+      "agent_input_tokens": 89,
+      "agent_output_tokens": 2262,
+      "agent_billed_input_tokens": 308685,
+      "agent_context_window_tokens": 29337
+    },
+    {
+      "task_id": 36,
+      "sample_index": 0,
+      "sequence_position": 36,
+      "passed": false,
+      "info": "failed: Test execution failed: limit",
+      "errored": false,
+      "agent_wall_time": 300.02911637496436,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 37,
+      "sample_index": 0,
+      "sequence_position": 37,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 77.89412262500264,
+      "agent_num_turns": 11,
+      "agent_cost_usd": 0.1060866,
+      "agent_input_tokens": 89,
+      "agent_output_tokens": 7525,
+      "agent_billed_input_tokens": 348718,
+      "agent_context_window_tokens": 34826
+    },
+    {
+      "task_id": 38,
+      "sample_index": 0,
+      "sequence_position": 38,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 300.02936016599415,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 39,
+      "sample_index": 0,
+      "sequence_position": 39,
+      "passed": false,
+      "info": "timed out",
+      "errored": false,
+      "agent_wall_time": 300.02955095801735,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 40,
+      "sample_index": 0,
+      "sequence_position": 40,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 212.70016729197232,
+      "agent_num_turns": 17,
+      "agent_cost_usd": 0.1309701,
+      "agent_input_tokens": 137,
+      "agent_output_tokens": 7879,
+      "agent_billed_input_tokens": 557891,
+      "agent_context_window_tokens": 35956
+    },
+    {
+      "task_id": 41,
+      "sample_index": 0,
+      "sequence_position": 41,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 23.98428591695847,
+      "agent_num_turns": 6,
+      "agent_cost_usd": 0.04835669999999999,
+      "agent_input_tokens": 49,
+      "agent_output_tokens": 1854,
+      "agent_billed_input_tokens": 167535,
+      "agent_context_window_tokens": 28872
+    },
+    {
+      "task_id": 42,
+      "sample_index": 0,
+      "sequence_position": 42,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 26.504122583020944,
+      "agent_num_turns": 9,
+      "agent_cost_usd": 0.054953,
+      "agent_input_tokens": 73,
+      "agent_output_tokens": 1635,
+      "agent_billed_input_tokens": 249241,
+      "agent_context_window_tokens": 28681
+    },
+    {
+      "task_id": 43,
+      "sample_index": 0,
+      "sequence_position": 43,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 233.68051924998872,
+      "agent_num_turns": 16,
+      "agent_cost_usd": 0.14165669999999997,
+      "agent_input_tokens": 129,
+      "agent_output_tokens": 9643,
+      "agent_billed_input_tokens": 555415,
+      "agent_context_window_tokens": 37072
+    },
+    {
+      "task_id": 44,
+      "sample_index": 0,
+      "sequence_position": 44,
+      "passed": false,
+      "info": "failed: Test execution failed: change_base",
+      "errored": false,
+      "agent_wall_time": 282.7783960420056,
+      "agent_num_turns": 49,
+      "agent_cost_usd": 0.4138731999999999,
+      "agent_input_tokens": 393,
+      "agent_output_tokens": 23885,
+      "agent_billed_input_tokens": 2209411,
+      "agent_context_window_tokens": 55699
+    },
+    {
+      "task_id": 45,
+      "sample_index": 0,
+      "sequence_position": 45,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 23.4365879590041,
+      "agent_num_turns": 7,
+      "agent_cost_usd": 0.04908950000000001,
+      "agent_input_tokens": 57,
+      "agent_output_tokens": 1686,
+      "agent_billed_input_tokens": 192727,
+      "agent_context_window_tokens": 28438
+    },
+    {
+      "task_id": 46,
+      "sample_index": 0,
+      "sequence_position": 46,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 49.2195877499762,
+      "agent_num_turns": 7,
+      "agent_cost_usd": 0.0703199,
+      "agent_input_tokens": 57,
+      "agent_output_tokens": 4521,
+      "agent_billed_input_tokens": 208152,
+      "agent_context_window_tokens": 31259
+    },
+    {
+      "task_id": 47,
+      "sample_index": 0,
+      "sequence_position": 47,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 176.68638233398087,
+      "agent_num_turns": 11,
+      "agent_cost_usd": 0.07738429999999999,
+      "agent_input_tokens": 89,
+      "agent_output_tokens": 3811,
+      "agent_billed_input_tokens": 323454,
+      "agent_context_window_tokens": 30855
+    },
+    {
+      "task_id": 48,
+      "sample_index": 0,
+      "sequence_position": 48,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 35.48623179201968,
+      "agent_num_turns": 10,
+      "agent_cost_usd": 0.0660631,
+      "agent_input_tokens": 81,
+      "agent_output_tokens": 2661,
+      "agent_billed_input_tokens": 285447,
+      "agent_context_window_tokens": 29918
+    },
+    {
+      "task_id": 49,
+      "sample_index": 0,
+      "sequence_position": 49,
+      "passed": false,
+      "info": "failed: Test execution failed: modp",
+      "errored": false,
+      "agent_wall_time": 130.52539091696963,
+      "agent_num_turns": 25,
+      "agent_cost_usd": 0.17940620000000002,
+      "agent_input_tokens": 201,
+      "agent_output_tokens": 10721,
+      "agent_billed_input_tokens": 836431,
+      "agent_context_window_tokens": 39291
+    },
+    {
+      "task_id": 50,
+      "sample_index": 0,
+      "sequence_position": 50,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 300.0208516670391,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 51,
+      "sample_index": 0,
+      "sequence_position": 51,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 34.00293774995953,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.0593817,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 2633,
+      "agent_billed_input_tokens": 227910,
+      "agent_context_window_tokens": 29501
+    },
+    {
+      "task_id": 52,
+      "sample_index": 0,
+      "sequence_position": 52,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 27.052711791999172,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.0529832,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 1786,
+      "agent_billed_input_tokens": 222105,
+      "agent_context_window_tokens": 28671
+    },
+    {
+      "task_id": 53,
+      "sample_index": 0,
+      "sequence_position": 53,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 21.261081375007052,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.050572,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 1469,
+      "agent_billed_input_tokens": 220228,
+      "agent_context_window_tokens": 28336
+    },
+    {
+      "task_id": 54,
+      "sample_index": 0,
+      "sequence_position": 54,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 34.62818162504118,
+      "agent_num_turns": 9,
+      "agent_cost_usd": 0.0649666,
+      "agent_input_tokens": 73,
+      "agent_output_tokens": 2893,
+      "agent_billed_input_tokens": 259241,
+      "agent_context_window_tokens": 30095
+    },
+    {
+      "task_id": 55,
+      "sample_index": 0,
+      "sequence_position": 55,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 36.50612075004028,
+      "agent_num_turns": 10,
+      "agent_cost_usd": 0.0658333,
+      "agent_input_tokens": 81,
+      "agent_output_tokens": 2703,
+      "agent_billed_input_tokens": 284369,
+      "agent_context_window_tokens": 29748
+    },
+    {
+      "task_id": 56,
+      "sample_index": 0,
+      "sequence_position": 56,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 58.17321441700915,
+      "agent_num_turns": 13,
+      "agent_cost_usd": 0.0898223,
+      "agent_input_tokens": 105,
+      "agent_output_tokens": 4539,
+      "agent_billed_input_tokens": 393048,
+      "agent_context_window_tokens": 31803
+    },
+    {
+      "task_id": 57,
+      "sample_index": 0,
+      "sequence_position": 57,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 210.87322541698813,
+      "agent_num_turns": 21,
+      "agent_cost_usd": 0.1287894,
+      "agent_input_tokens": 169,
+      "agent_output_tokens": 6397,
+      "agent_billed_input_tokens": 647207,
+      "agent_context_window_tokens": 34007
+    },
+    {
+      "task_id": 58,
+      "sample_index": 0,
+      "sequence_position": 58,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 40.114824374963064,
+      "agent_num_turns": 15,
+      "agent_cost_usd": 0.0821122,
+      "agent_input_tokens": 121,
+      "agent_output_tokens": 2841,
+      "agent_billed_input_tokens": 429884,
+      "agent_context_window_tokens": 30264
+    },
+    {
+      "task_id": 59,
+      "sample_index": 0,
+      "sequence_position": 59,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 36.17299604200525,
+      "agent_num_turns": 10,
+      "agent_cost_usd": 0.0675818,
+      "agent_input_tokens": 81,
+      "agent_output_tokens": 2960,
+      "agent_billed_input_tokens": 285067,
+      "agent_context_window_tokens": 29951
+    },
+    {
+      "task_id": 60,
+      "sample_index": 0,
+      "sequence_position": 60,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 56.098106166988146,
+      "agent_num_turns": 14,
+      "agent_cost_usd": 0.08884879999999999,
+      "agent_input_tokens": 113,
+      "agent_output_tokens": 4205,
+      "agent_billed_input_tokens": 404115,
+      "agent_context_window_tokens": 31577
+    },
+    {
+      "task_id": 61,
+      "sample_index": 0,
+      "sequence_position": 61,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 61.80799304199172,
+      "agent_num_turns": 11,
+      "agent_cost_usd": 0.09089320000000002,
+      "agent_input_tokens": 89,
+      "agent_output_tokens": 5472,
+      "agent_billed_input_tokens": 340644,
+      "agent_context_window_tokens": 32676
+    },
+    {
+      "task_id": 62,
+      "sample_index": 0,
+      "sequence_position": 62,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 167.05451058404287,
+      "agent_num_turns": 11,
+      "agent_cost_usd": 0.07593889999999999,
+      "agent_input_tokens": 89,
+      "agent_output_tokens": 3539,
+      "agent_billed_input_tokens": 320927,
+      "agent_context_window_tokens": 30942
+    },
+    {
+      "task_id": 63,
+      "sample_index": 0,
+      "sequence_position": 63,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 51.80777404201217,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.0785604,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 5127,
+      "agent_billed_input_tokens": 244228,
+      "agent_context_window_tokens": 32122
+    },
+    {
+      "task_id": 64,
+      "sample_index": 0,
+      "sequence_position": 64,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 42.244600541947875,
+      "agent_num_turns": 13,
+      "agent_cost_usd": 0.07970659999999999,
+      "agent_input_tokens": 105,
+      "agent_output_tokens": 3082,
+      "agent_billed_input_tokens": 382354,
+      "agent_context_window_tokens": 30826
+    },
+    {
+      "task_id": 65,
+      "sample_index": 0,
+      "sequence_position": 65,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 47.51565233297879,
+      "agent_num_turns": 9,
+      "agent_cost_usd": 0.07153340000000001,
+      "agent_input_tokens": 73,
+      "agent_output_tokens": 3819,
+      "agent_billed_input_tokens": 266050,
+      "agent_context_window_tokens": 30756
+    },
+    {
+      "task_id": 66,
+      "sample_index": 0,
+      "sequence_position": 66,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 42.34794970799703,
+      "agent_num_turns": 10,
+      "agent_cost_usd": 0.0736084,
+      "agent_input_tokens": 81,
+      "agent_output_tokens": 3655,
+      "agent_billed_input_tokens": 294548,
+      "agent_context_window_tokens": 30796
+    },
+    {
+      "task_id": 67,
+      "sample_index": 0,
+      "sequence_position": 67,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 58.47787841694662,
+      "agent_num_turns": 15,
+      "agent_cost_usd": 0.09615459999999999,
+      "agent_input_tokens": 121,
+      "agent_output_tokens": 4390,
+      "agent_billed_input_tokens": 453098,
+      "agent_context_window_tokens": 32234
+    },
+    {
+      "task_id": 68,
+      "sample_index": 0,
+      "sequence_position": 68,
+      "passed": false,
+      "info": "failed: Test assertion failed: Error",
+      "errored": false,
+      "agent_wall_time": 300.02187774999766,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 69,
+      "sample_index": 0,
+      "sequence_position": 69,
+      "passed": false,
+      "info": "failed: Test execution failed: length",
+      "errored": false,
+      "agent_wall_time": 300.01979291596217,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 70,
+      "sample_index": 0,
+      "sequence_position": 70,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 300.0212672079797,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 71,
+      "sample_index": 0,
+      "sequence_position": 71,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 267.33235662500374,
+      "agent_num_turns": 32,
+      "agent_cost_usd": 0.2119849,
+      "agent_input_tokens": 257,
+      "agent_output_tokens": 11577,
+      "agent_billed_input_tokens": 1100233,
+      "agent_context_window_tokens": 40250
+    },
+    {
+      "task_id": 72,
+      "sample_index": 0,
+      "sequence_position": 72,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 33.1696737500024,
+      "agent_num_turns": 9,
+      "agent_cost_usd": 0.0594191,
+      "agent_input_tokens": 73,
+      "agent_output_tokens": 2251,
+      "agent_billed_input_tokens": 252372,
+      "agent_context_window_tokens": 29211
+    },
+    {
+      "task_id": 73,
+      "sample_index": 0,
+      "sequence_position": 73,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 46.16763204196468,
+      "agent_num_turns": 10,
+      "agent_cost_usd": 0.07410360000000003,
+      "agent_input_tokens": 81,
+      "agent_output_tokens": 3652,
+      "agent_billed_input_tokens": 296453,
+      "agent_context_window_tokens": 30939
+    },
+    {
+      "task_id": 74,
+      "sample_index": 0,
+      "sequence_position": 74,
+      "passed": false,
+      "info": "failed: Test execution failed: type",
+      "errored": false,
+      "agent_wall_time": 246.16761137498543,
+      "agent_num_turns": 25,
+      "agent_cost_usd": 0.1556143,
+      "agent_input_tokens": 201,
+      "agent_output_tokens": 7626,
+      "agent_billed_input_tokens": 808671,
+      "agent_context_window_tokens": 36280
+    },
+    {
+      "task_id": 75,
+      "sample_index": 0,
+      "sequence_position": 75,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 41.91287233302137,
+      "agent_num_turns": 9,
+      "agent_cost_usd": 0.07119550000000001,
+      "agent_input_tokens": 73,
+      "agent_output_tokens": 3765,
+      "agent_billed_input_tokens": 263962,
+      "agent_context_window_tokens": 30837
+    },
+    {
+      "task_id": 76,
+      "sample_index": 0,
+      "sequence_position": 76,
+      "passed": false,
+      "info": "failed: Test assertion failed: This prints if this assert fails 1 (good for debugging!)",
+      "errored": false,
+      "agent_wall_time": 300.0198109159828,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 77,
+      "sample_index": 0,
+      "sequence_position": 77,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 110.3928840829758,
+      "agent_num_turns": 27,
+      "agent_cost_usd": 0.17055310000000004,
+      "agent_input_tokens": 217,
+      "agent_output_tokens": 8634,
+      "agent_billed_input_tokens": 893468,
+      "agent_context_window_tokens": 37083
+    },
+    {
+      "task_id": 78,
+      "sample_index": 0,
+      "sequence_position": 78,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 32.64969812502386,
+      "agent_num_turns": 7,
+      "agent_cost_usd": 0.057760300000000014,
+      "agent_input_tokens": 57,
+      "agent_output_tokens": 2647,
+      "agent_billed_input_tokens": 201015,
+      "agent_context_window_tokens": 29868
+    },
+    {
+      "task_id": 79,
+      "sample_index": 0,
+      "sequence_position": 79,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 78.94501983298687,
+      "agent_num_turns": 9,
+      "agent_cost_usd": 0.1014411,
+      "agent_input_tokens": 73,
+      "agent_output_tokens": 7573,
+      "agent_billed_input_tokens": 299117,
+      "agent_context_window_tokens": 34826
+    },
+    {
+      "task_id": 80,
+      "sample_index": 0,
+      "sequence_position": 80,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 231.93261291703675,
+      "agent_num_turns": 18,
+      "agent_cost_usd": 0.1405613,
+      "agent_input_tokens": 145,
+      "agent_output_tokens": 8561,
+      "agent_billed_input_tokens": 606352,
+      "agent_context_window_tokens": 36617
+    },
+    {
+      "task_id": 81,
+      "sample_index": 0,
+      "sequence_position": 81,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 80.51745462499093,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.09755599999999998,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 7472,
+      "agent_billed_input_tokens": 263412,
+      "agent_context_window_tokens": 34840
+    },
+    {
+      "task_id": 82,
+      "sample_index": 0,
+      "sequence_position": 82,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 98.18404112500139,
+      "agent_num_turns": 18,
+      "agent_cost_usd": 0.1398943,
+      "agent_input_tokens": 145,
+      "agent_output_tokens": 8499,
+      "agent_billed_input_tokens": 609303,
+      "agent_context_window_tokens": 36328
+    },
+    {
+      "task_id": 83,
+      "sample_index": 0,
+      "sequence_position": 83,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 80.80738454195671,
+      "agent_num_turns": 11,
+      "agent_cost_usd": 0.10434700000000001,
+      "agent_input_tokens": 89,
+      "agent_output_tokens": 7259,
+      "agent_billed_input_tokens": 354773,
+      "agent_context_window_tokens": 34297
+    },
+    {
+      "task_id": 84,
+      "sample_index": 0,
+      "sequence_position": 84,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 234.8639199169702,
+      "agent_num_turns": 24,
+      "agent_cost_usd": 0.1583796,
+      "agent_input_tokens": 193,
+      "agent_output_tokens": 8320,
+      "agent_billed_input_tokens": 781786,
+      "agent_context_window_tokens": 37400
+    },
+    {
+      "task_id": 85,
+      "sample_index": 0,
+      "sequence_position": 85,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 41.23176291602431,
+      "agent_num_turns": 10,
+      "agent_cost_usd": 0.0720612,
+      "agent_input_tokens": 81,
+      "agent_output_tokens": 3581,
+      "agent_billed_input_tokens": 289642,
+      "agent_context_window_tokens": 30432
+    },
+    {
+      "task_id": 86,
+      "sample_index": 0,
+      "sequence_position": 86,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 46.81513904198073,
+      "agent_num_turns": 12,
+      "agent_cost_usd": 0.07947290000000001,
+      "agent_input_tokens": 97,
+      "agent_output_tokens": 3519,
+      "agent_billed_input_tokens": 354436,
+      "agent_context_window_tokens": 31043
+    },
+    {
+      "task_id": 87,
+      "sample_index": 0,
+      "sequence_position": 87,
+      "passed": false,
+      "info": "failed: Test execution failed: y",
+      "errored": false,
+      "agent_wall_time": 290.0020167090115,
+      "agent_num_turns": 29,
+      "agent_cost_usd": 0.20675700000000002,
+      "agent_input_tokens": 233,
+      "agent_output_tokens": 10874,
+      "agent_billed_input_tokens": 1061765,
+      "agent_context_window_tokens": 41285
+    },
+    {
+      "task_id": 88,
+      "sample_index": 0,
+      "sequence_position": 88,
+      "passed": false,
+      "info": "failed: Test execution failed: type",
+      "errored": false,
+      "agent_wall_time": 62.224917125015054,
+      "agent_num_turns": 20,
+      "agent_cost_usd": 0.1110602,
+      "agent_input_tokens": 161,
+      "agent_output_tokens": 4657,
+      "agent_billed_input_tokens": 594550,
+      "agent_context_window_tokens": 32000
+    },
+    {
+      "task_id": 89,
+      "sample_index": 0,
+      "sequence_position": 89,
+      "passed": false,
+      "info": "failed: Test assertion failed: This prints if this assert fails 1 (good for debugging!)",
+      "errored": false,
+      "agent_wall_time": 300.02144312497694,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 90,
+      "sample_index": 0,
+      "sequence_position": 90,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 29.26103537500603,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.056904800000000005,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 2362,
+      "agent_billed_input_tokens": 224319,
+      "agent_context_window_tokens": 29099
+    },
+    {
+      "task_id": 91,
+      "sample_index": 0,
+      "sequence_position": 91,
+      "passed": false,
+      "info": "timed out",
+      "errored": false,
+      "agent_wall_time": 300.02168187504867,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 92,
+      "sample_index": 0,
+      "sequence_position": 92,
+      "passed": false,
+      "info": "failed: Test assertion failed: This prints if this assert fails 10 (also good for debugging!)",
+      "errored": false,
+      "agent_wall_time": 34.913264041009825,
+      "agent_num_turns": 11,
+      "agent_cost_usd": 0.0693989,
+      "agent_input_tokens": 89,
+      "agent_output_tokens": 2690,
+      "agent_billed_input_tokens": 315378,
+      "agent_context_window_tokens": 29983
+    },
+    {
+      "task_id": 93,
+      "sample_index": 0,
+      "sequence_position": 93,
+      "passed": false,
+      "info": "failed: Test execution failed: type",
+      "errored": false,
+      "agent_wall_time": 300.01972487499006,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 94,
+      "sample_index": 0,
+      "sequence_position": 94,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 206.62769912503427,
+      "agent_num_turns": 16,
+      "agent_cost_usd": 0.1186827,
+      "agent_input_tokens": 129,
+      "agent_output_tokens": 6969,
+      "agent_billed_input_tokens": 503985,
+      "agent_context_window_tokens": 34742
+    },
+    {
+      "task_id": 95,
+      "sample_index": 0,
+      "sequence_position": 95,
+      "passed": false,
+      "info": "failed: Test execution failed: type",
+      "errored": false,
+      "agent_wall_time": 300.0203014589497,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 96,
+      "sample_index": 0,
+      "sequence_position": 96,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 227.67825854197145,
+      "agent_num_turns": 62,
+      "agent_cost_usd": 0.3931689,
+      "agent_input_tokens": 497,
+      "agent_output_tokens": 16702,
+      "agent_billed_input_tokens": 2471186,
+      "agent_context_window_tokens": 49883
+    },
+    {
+      "task_id": 97,
+      "sample_index": 0,
+      "sequence_position": 97,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 23.548062209039927,
+      "agent_num_turns": 6,
+      "agent_cost_usd": 0.04867030000000001,
+      "agent_input_tokens": 49,
+      "agent_output_tokens": 1923,
+      "agent_billed_input_tokens": 167560,
+      "agent_context_window_tokens": 28881
+    },
+    {
+      "task_id": 98,
+      "sample_index": 0,
+      "sequence_position": 98,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 78.43541979201837,
+      "agent_num_turns": 15,
+      "agent_cost_usd": 0.1153245,
+      "agent_input_tokens": 121,
+      "agent_output_tokens": 7144,
+      "agent_billed_input_tokens": 468884,
+      "agent_context_window_tokens": 34371
+    },
+    {
+      "task_id": 99,
+      "sample_index": 0,
+      "sequence_position": 99,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 137.78997750004055,
+      "agent_num_turns": 31,
+      "agent_cost_usd": 0.20848450000000004,
+      "agent_input_tokens": 249,
+      "agent_output_tokens": 11397,
+      "agent_billed_input_tokens": 1056289,
+      "agent_context_window_tokens": 41218
+    },
+    {
+      "task_id": 100,
+      "sample_index": 0,
+      "sequence_position": 100,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 37.31422204198316,
+      "agent_num_turns": 11,
+      "agent_cost_usd": 0.0702192,
+      "agent_input_tokens": 89,
+      "agent_output_tokens": 2657,
+      "agent_billed_input_tokens": 317965,
+      "agent_context_window_tokens": 30337
+    },
+    {
+      "task_id": 101,
+      "sample_index": 0,
+      "sequence_position": 101,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 51.232218291959725,
+      "agent_num_turns": 10,
+      "agent_cost_usd": 0.07617890000000001,
+      "agent_input_tokens": 81,
+      "agent_output_tokens": 3889,
+      "agent_billed_input_tokens": 297648,
+      "agent_context_window_tokens": 31321
+    },
+    {
+      "task_id": 102,
+      "sample_index": 0,
+      "sequence_position": 102,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 173.00872858299408,
+      "agent_num_turns": 13,
+      "agent_cost_usd": 0.0815618,
+      "agent_input_tokens": 105,
+      "agent_output_tokens": 3445,
+      "agent_billed_input_tokens": 381751,
+      "agent_context_window_tokens": 30911
+    },
+    {
+      "task_id": 103,
+      "sample_index": 0,
+      "sequence_position": 103,
+      "passed": false,
+      "info": "failed: IPC execution error: Failed to create IPC function:  ",
+      "errored": false,
+      "agent_wall_time": 300.0205956249847,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 104,
+      "sample_index": 0,
+      "sequence_position": 104,
+      "passed": false,
+      "info": "failed: Test execution failed: rank",
+      "errored": false,
+      "agent_wall_time": 300.02431475004414,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 105,
+      "sample_index": 0,
+      "sequence_position": 105,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 39.08870662498521,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.0660857,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 3243,
+      "agent_billed_input_tokens": 236699,
+      "agent_context_window_tokens": 30810
+    },
+    {
+      "task_id": 106,
+      "sample_index": 0,
+      "sequence_position": 106,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 300.01940295897657,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 107,
+      "sample_index": 0,
+      "sequence_position": 107,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 237.6314593749703,
+      "agent_num_turns": 17,
+      "agent_cost_usd": 0.1317542,
+      "agent_input_tokens": 137,
+      "agent_output_tokens": 7889,
+      "agent_billed_input_tokens": 556060,
+      "agent_context_window_tokens": 36364
+    },
+    {
+      "task_id": 108,
+      "sample_index": 0,
+      "sequence_position": 108,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 297.3944270000211,
+      "agent_num_turns": 41,
+      "agent_cost_usd": 0.28795350000000003,
+      "agent_input_tokens": 329,
+      "agent_output_tokens": 15116,
+      "agent_billed_input_tokens": 1563225,
+      "agent_context_window_tokens": 46524
+    },
+    {
+      "task_id": 109,
+      "sample_index": 0,
+      "sequence_position": 109,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 114.39181624999037,
+      "agent_num_turns": 24,
+      "agent_cost_usd": 0.1717339,
+      "agent_input_tokens": 193,
+      "agent_output_tokens": 9469,
+      "agent_billed_input_tokens": 825878,
+      "agent_context_window_tokens": 39029
+    },
+    {
+      "task_id": 110,
+      "sample_index": 0,
+      "sequence_position": 110,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 35.89968033396872,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.0627599,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 3058,
+      "agent_billed_input_tokens": 229833,
+      "agent_context_window_tokens": 30002
+    },
+    {
+      "task_id": 111,
+      "sample_index": 0,
+      "sequence_position": 111,
+      "passed": false,
+      "info": "failed: Test assertion failed: This prints if this assert fails 1 (good for debugging!)",
+      "errored": false,
+      "agent_wall_time": 300.0204773750156,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 112,
+      "sample_index": 0,
+      "sequence_position": 112,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 32.52714937494602,
+      "agent_num_turns": 11,
+      "agent_cost_usd": 0.0687689,
+      "agent_input_tokens": 89,
+      "agent_output_tokens": 2557,
+      "agent_billed_input_tokens": 315889,
+      "agent_context_window_tokens": 29964
+    },
+    {
+      "task_id": 113,
+      "sample_index": 0,
+      "sequence_position": 113,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 219.3100210839766,
+      "agent_num_turns": 20,
+      "agent_cost_usd": 0.13446119999999998,
+      "agent_input_tokens": 161,
+      "agent_output_tokens": 6986,
+      "agent_billed_input_tokens": 638195,
+      "agent_context_window_tokens": 35845
+    },
+    {
+      "task_id": 114,
+      "sample_index": 0,
+      "sequence_position": 114,
+      "passed": false,
+      "info": "failed: Test execution failed: until",
+      "errored": false,
+      "agent_wall_time": 300.0217361249961,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 115,
+      "sample_index": 0,
+      "sequence_position": 115,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 35.01025233301334,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.06270490000000001,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 2741,
+      "agent_billed_input_tokens": 234037,
+      "agent_context_window_tokens": 30466
+    },
+    {
+      "task_id": 116,
+      "sample_index": 0,
+      "sequence_position": 116,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 300.02300933300285,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 117,
+      "sample_index": 0,
+      "sequence_position": 117,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 52.23020087496843,
+      "agent_num_turns": 10,
+      "agent_cost_usd": 0.0924319,
+      "agent_input_tokens": 81,
+      "agent_output_tokens": 5999,
+      "agent_billed_input_tokens": 317633,
+      "agent_context_window_tokens": 33226
+    },
+    {
+      "task_id": 118,
+      "sample_index": 0,
+      "sequence_position": 118,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 105.29046016698703,
+      "agent_num_turns": 22,
+      "agent_cost_usd": 0.16344150000000005,
+      "agent_input_tokens": 177,
+      "agent_output_tokens": 9218,
+      "agent_billed_input_tokens": 766934,
+      "agent_context_window_tokens": 38455
+    },
+    {
+      "task_id": 119,
+      "sample_index": 0,
+      "sequence_position": 119,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 290.21666883298894,
+      "agent_num_turns": 27,
+      "agent_cost_usd": 0.2066387,
+      "agent_input_tokens": 217,
+      "agent_output_tokens": 12308,
+      "agent_billed_input_tokens": 969316,
+      "agent_context_window_tokens": 42375
+    },
+    {
+      "task_id": 120,
+      "sample_index": 0,
+      "sequence_position": 120,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 27.141856125032064,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.05482050000000001,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 2011,
+      "agent_billed_input_tokens": 223058,
+      "agent_context_window_tokens": 28981
+    },
+    {
+      "task_id": 121,
+      "sample_index": 0,
+      "sequence_position": 121,
+      "passed": false,
+      "info": "failed: Test execution failed: limit",
+      "errored": false,
+      "agent_wall_time": 300.0230696249637,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 122,
+      "sample_index": 0,
+      "sequence_position": 122,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 300.01854637503857,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 123,
+      "sample_index": 0,
+      "sequence_position": 123,
+      "passed": false,
+      "info": "failed: Test execution failed: break",
+      "errored": false,
+      "agent_wall_time": 300.0173804999795,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 124,
+      "sample_index": 0,
+      "sequence_position": 124,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 300.0183210420073,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 125,
+      "sample_index": 0,
+      "sequence_position": 125,
+      "passed": false,
+      "info": "failed: Test execution failed: type",
+      "errored": false,
+      "agent_wall_time": 300.01876129198354,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 126,
+      "sample_index": 0,
+      "sequence_position": 126,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 300.0182340830215,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 127,
+      "sample_index": 0,
+      "sequence_position": 127,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 258.0212752079824,
+      "agent_num_turns": 27,
+      "agent_cost_usd": 0.20888830000000003,
+      "agent_input_tokens": 217,
+      "agent_output_tokens": 12356,
+      "agent_billed_input_tokens": 985510,
+      "agent_context_window_tokens": 42563
+    },
+    {
+      "task_id": 128,
+      "sample_index": 0,
+      "sequence_position": 128,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 35.891736250021495,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.0604611,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 2708,
+      "agent_billed_input_tokens": 229476,
+      "agent_context_window_tokens": 29753
+    },
+    {
+      "task_id": 129,
+      "sample_index": 0,
+      "sequence_position": 129,
+      "passed": false,
+      "info": "failed: Test execution failed: grid",
+      "errored": false,
+      "agent_wall_time": 300.021802125033,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 130,
+      "sample_index": 0,
+      "sequence_position": 130,
+      "passed": false,
+      "info": "failed: IPC execution error: Failed to create IPC function: }",
+      "errored": false,
+      "agent_wall_time": 300.01685545797227,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 131,
+      "sample_index": 0,
+      "sequence_position": 131,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 65.2730848750216,
+      "agent_num_turns": 10,
+      "agent_cost_usd": 0.0685356,
+      "agent_input_tokens": 81,
+      "agent_output_tokens": 3007,
+      "agent_billed_input_tokens": 286735,
+      "agent_context_window_tokens": 30221
+    },
+    {
+      "task_id": 132,
+      "sample_index": 0,
+      "sequence_position": 132,
+      "passed": false,
+      "info": "failed: Test execution failed: type",
+      "errored": false,
+      "agent_wall_time": 300.0177336669876,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 133,
+      "sample_index": 0,
+      "sequence_position": 133,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 259.7092560000019,
+      "agent_num_turns": 29,
+      "agent_cost_usd": 0.1588534,
+      "agent_input_tokens": 233,
+      "agent_output_tokens": 6465,
+      "agent_billed_input_tokens": 916401,
+      "agent_context_window_tokens": 35387
+    },
+    {
+      "task_id": 134,
+      "sample_index": 0,
+      "sequence_position": 134,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 93.90978512499714,
+      "agent_num_turns": 14,
+      "agent_cost_usd": 0.1140596,
+      "agent_input_tokens": 113,
+      "agent_output_tokens": 7097,
+      "agent_billed_input_tokens": 451471,
+      "agent_context_window_tokens": 34695
+    },
+    {
+      "task_id": 135,
+      "sample_index": 0,
+      "sequence_position": 135,
+      "passed": false,
+      "info": "failed: Test execution failed: length",
+      "errored": false,
+      "agent_wall_time": 300.01879429101245,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 136,
+      "sample_index": 0,
+      "sequence_position": 136,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 66.49100620899117,
+      "agent_num_turns": 13,
+      "agent_cost_usd": 0.097156,
+      "agent_input_tokens": 105,
+      "agent_output_tokens": 5406,
+      "agent_billed_input_tokens": 399519,
+      "agent_context_window_tokens": 33007
+    },
+    {
+      "task_id": 137,
+      "sample_index": 0,
+      "sequence_position": 137,
+      "passed": false,
+      "info": "failed: Test execution failed: type",
+      "errored": false,
+      "agent_wall_time": 300.0194869170082,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 138,
+      "sample_index": 0,
+      "sequence_position": 138,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 37.486369292018935,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.0631435,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 3176,
+      "agent_billed_input_tokens": 230511,
+      "agent_context_window_tokens": 29904
+    },
+    {
+      "task_id": 139,
+      "sample_index": 0,
+      "sequence_position": 139,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 37.74064587499015,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.064253,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 3199,
+      "agent_billed_input_tokens": 231893,
+      "agent_context_window_tokens": 30341
+    },
+    {
+      "task_id": 140,
+      "sample_index": 0,
+      "sequence_position": 140,
+      "passed": false,
+      "info": "failed: Test execution failed: else",
+      "errored": false,
+      "agent_wall_time": 300.0179233329836,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 141,
+      "sample_index": 0,
+      "sequence_position": 141,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 80.33881820802344,
+      "agent_num_turns": 11,
+      "agent_cost_usd": 0.112677,
+      "agent_input_tokens": 89,
+      "agent_output_tokens": 7911,
+      "agent_billed_input_tokens": 369868,
+      "agent_context_window_tokens": 36082
+    },
+    {
+      "task_id": 142,
+      "sample_index": 0,
+      "sequence_position": 142,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 201.46726520900847,
+      "agent_num_turns": 13,
+      "agent_cost_usd": 0.10379899999999999,
+      "agent_input_tokens": 105,
+      "agent_output_tokens": 6279,
+      "agent_billed_input_tokens": 403151,
+      "agent_context_window_tokens": 33969
+    },
+    {
+      "task_id": 143,
+      "sample_index": 0,
+      "sequence_position": 143,
+      "passed": false,
+      "info": "failed: Test execution failed: type",
+      "errored": false,
+      "agent_wall_time": 300.0170631670044,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 144,
+      "sample_index": 0,
+      "sequence_position": 144,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 44.24152291700011,
+      "agent_num_turns": 11,
+      "agent_cost_usd": 0.07558000000000001,
+      "agent_input_tokens": 89,
+      "agent_output_tokens": 3247,
+      "agent_billed_input_tokens": 326460,
+      "agent_context_window_tokens": 31144
+    },
+    {
+      "task_id": 145,
+      "sample_index": 0,
+      "sequence_position": 145,
+      "passed": false,
+      "info": "failed: Test execution failed: type",
+      "errored": false,
+      "agent_wall_time": 300.0161599580315,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 146,
+      "sample_index": 0,
+      "sequence_position": 146,
+      "passed": false,
+      "info": "failed: Test assertion failed: ",
+      "errored": false,
+      "agent_wall_time": 56.78218212496722,
+      "agent_num_turns": 9,
+      "agent_cost_usd": 0.0829859,
+      "agent_input_tokens": 73,
+      "agent_output_tokens": 5356,
+      "agent_billed_input_tokens": 274102,
+      "agent_context_window_tokens": 32303
+    },
+    {
+      "task_id": 147,
+      "sample_index": 0,
+      "sequence_position": 147,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 160.06326162494952,
+      "agent_num_turns": 22,
+      "agent_cost_usd": 0.21737710000000002,
+      "agent_input_tokens": 177,
+      "agent_output_tokens": 16011,
+      "agent_billed_input_tokens": 858053,
+      "agent_context_window_tokens": 44148
+    },
+    {
+      "task_id": 148,
+      "sample_index": 0,
+      "sequence_position": 148,
+      "passed": false,
+      "info": "failed: Test execution failed: domain",
+      "errored": false,
+      "agent_wall_time": 300.01733816601336,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 149,
+      "sample_index": 0,
+      "sequence_position": 149,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 210.2770695000072,
+      "agent_num_turns": 18,
+      "agent_cost_usd": 0.12434509999999999,
+      "agent_input_tokens": 145,
+      "agent_output_tokens": 6605,
+      "agent_billed_input_tokens": 566547,
+      "agent_context_window_tokens": 35284
+    },
+    {
+      "task_id": 150,
+      "sample_index": 0,
+      "sequence_position": 150,
+      "passed": false,
+      "info": "failed: Test execution failed: isprime",
+      "errored": false,
+      "agent_wall_time": 41.86868600000162,
+      "agent_num_turns": 9,
+      "agent_cost_usd": 0.06891270000000001,
+      "agent_input_tokens": 73,
+      "agent_output_tokens": 3419,
+      "agent_billed_input_tokens": 262188,
+      "agent_context_window_tokens": 30621
+    },
+    {
+      "task_id": 151,
+      "sample_index": 0,
+      "sequence_position": 151,
+      "passed": false,
+      "info": "failed: Test assertion failed: This prints if this assert fails 1 (good for debugging!)",
+      "errored": false,
+      "agent_wall_time": 297.053711540997,
+      "agent_num_turns": 43,
+      "agent_cost_usd": 0.28313190000000005,
+      "agent_input_tokens": 345,
+      "agent_output_tokens": 13948,
+      "agent_billed_input_tokens": 1604142,
+      "agent_context_window_tokens": 44921
+    },
+    {
+      "task_id": 152,
+      "sample_index": 0,
+      "sequence_position": 152,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 27.814490999968257,
+      "agent_num_turns": 8,
+      "agent_cost_usd": 0.055588500000000006,
+      "agent_input_tokens": 65,
+      "agent_output_tokens": 2010,
+      "agent_billed_input_tokens": 224740,
+      "agent_context_window_tokens": 29243
+    },
+    {
+      "task_id": 153,
+      "sample_index": 0,
+      "sequence_position": 153,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 255.0443409999716,
+      "agent_num_turns": 22,
+      "agent_cost_usd": 0.1495062,
+      "agent_input_tokens": 177,
+      "agent_output_tokens": 7543,
+      "agent_billed_input_tokens": 728165,
+      "agent_context_window_tokens": 37479
+    },
+    {
+      "task_id": 154,
+      "sample_index": 0,
+      "sequence_position": 154,
+      "passed": false,
+      "info": "failed: Test assertion failed: test #0",
+      "errored": false,
+      "agent_wall_time": 42.45045779098291,
+      "agent_num_turns": 13,
+      "agent_cost_usd": 0.08795189999999999,
+      "agent_input_tokens": 105,
+      "agent_output_tokens": 4312,
+      "agent_billed_input_tokens": 388142,
+      "agent_context_window_tokens": 31661
+    },
+    {
+      "task_id": 155,
+      "sample_index": 0,
+      "sequence_position": 155,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 232.48387979203835,
+      "agent_num_turns": 20,
+      "agent_cost_usd": 0.1408944,
+      "agent_input_tokens": 161,
+      "agent_output_tokens": 8245,
+      "agent_billed_input_tokens": 639249,
+      "agent_context_window_tokens": 35947
+    },
+    {
+      "task_id": 156,
+      "sample_index": 0,
+      "sequence_position": 156,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 196.23105466697598,
+      "agent_num_turns": 12,
+      "agent_cost_usd": 0.09930800000000001,
+      "agent_input_tokens": 97,
+      "agent_output_tokens": 6116,
+      "agent_billed_input_tokens": 375928,
+      "agent_context_window_tokens": 33514
+    },
+    {
+      "task_id": 157,
+      "sample_index": 0,
+      "sequence_position": 157,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 53.007578667020425,
+      "agent_num_turns": 13,
+      "agent_cost_usd": 0.0874935,
+      "agent_input_tokens": 105,
+      "agent_output_tokens": 4303,
+      "agent_billed_input_tokens": 381826,
+      "agent_context_window_tokens": 31759
+    },
+    {
+      "task_id": 158,
+      "sample_index": 0,
+      "sequence_position": 158,
+      "passed": false,
+      "info": "failed: Test assertion failed: t1",
+      "errored": false,
+      "agent_wall_time": 285.5844644170138,
+      "agent_num_turns": 37,
+      "agent_cost_usd": 0.2236189,
+      "agent_input_tokens": 297,
+      "agent_output_tokens": 10486,
+      "agent_billed_input_tokens": 1277815,
+      "agent_context_window_tokens": 39862
+    },
+    {
+      "task_id": 159,
+      "sample_index": 0,
+      "sequence_position": 159,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 37.59314854198601,
+      "agent_num_turns": 9,
+      "agent_cost_usd": 0.06276770000000001,
+      "agent_input_tokens": 73,
+      "agent_output_tokens": 2494,
+      "agent_billed_input_tokens": 258921,
+      "agent_context_window_tokens": 29894
+    },
+    {
+      "task_id": 160,
+      "sample_index": 0,
+      "sequence_position": 160,
+      "passed": false,
+      "info": "failed: Test execution failed: type",
+      "errored": false,
+      "agent_wall_time": 300.01807854202343,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 161,
+      "sample_index": 0,
+      "sequence_position": 161,
+      "passed": true,
+      "info": "passed",
+      "errored": false,
+      "agent_wall_time": 300.0186386249843,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 162,
+      "sample_index": 0,
+      "sequence_position": 162,
+      "passed": false,
+      "info": "failed: Test execution failed: length",
+      "errored": false,
+      "agent_wall_time": 300.0193256249768,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    },
+    {
+      "task_id": 163,
+      "sample_index": 0,
+      "sequence_position": 163,
+      "passed": false,
+      "info": "failed: Test execution failed: rank",
+      "errored": false,
+      "agent_wall_time": 300.0176912500174,
+      "agent_num_turns": null,
+      "agent_cost_usd": null,
+      "agent_input_tokens": null,
+      "agent_output_tokens": null,
+      "agent_billed_input_tokens": null,
+      "agent_context_window_tokens": null
+    }
+  ]
+}
