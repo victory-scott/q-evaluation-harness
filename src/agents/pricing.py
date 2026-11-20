@@ -1,8 +1,9 @@
 """List prices for agent backends, used to compute or audit task cost.
 
-The Codex CLI reports only token counts, so its cost is computed here from
-OpenAI's published list prices. Claude Code reports an API-equivalent cost
-itself (``total_cost_usd``), but it is only as good as the CLI's price table:
+The Codex and Antigravity CLIs report only token counts, so their cost is
+computed here from OpenAI's and Google's published list prices. Claude Code
+reports an API-equivalent cost itself (``total_cost_usd``), but it is only as
+good as the CLI's price table:
 for a model the CLI does not know (Haiku 5.5 on 2.1.287 reported ~32x the real
 cost) or prices wrongly (Sonnet 5.5 cache reads at 2x the listed rate), it is
 wrong. ``claude_cost_usd`` recomputes it from the usage the CLI records, so
@@ -76,7 +77,18 @@ def openai_cost_usd(
            + output * output_price
     """
     prices = openai_prices(model)
-    if prices is None or input_tokens is None or output_tokens is None:
+    if prices is None:
+        return None
+    return _token_cost(prices, input_tokens, cached_input_tokens, output_tokens)
+
+
+def _token_cost(
+    prices: TokenPrices,
+    input_tokens: Optional[int],
+    cached_input_tokens: Optional[int],
+    output_tokens: Optional[int],
+) -> Optional[float]:
+    if input_tokens is None or output_tokens is None:
         return None
     cached = min(cached_input_tokens or 0, input_tokens)
     return (
@@ -84,6 +96,38 @@ def openai_cost_usd(
         + cached * prices.cached_input
         + output_tokens * prices.output
     ) / 1_000_000
+
+
+# --- Google (Antigravity CLI) ---------------------------------------------
+
+GEMINI_PRICING_URL = "https://ai.google.dev/gemini-api/docs/pricing"
+
+# Empty on purpose: Gemini 4 list prices were not reachable when the
+# antigravity backend was added, and a missing model gets no cost rather than
+# a guess. Key by the exact --model string passed to agy. Token semantics
+# follow the Gemini API: cached input is a subset of input, and thought tokens
+# are billed as output (the backend adds them to output before pricing).
+GEMINI_PRICES: Dict[str, TokenPrices] = {}
+
+
+def gemini_cost_usd(
+    model: str,
+    input_tokens: Optional[int],
+    cached_input_tokens: Optional[int],
+    output_tokens: Optional[int],
+) -> Optional[float]:
+    """API-equivalent cost of one task from Antigravity token counts."""
+    prices = GEMINI_PRICES.get(model)
+    if prices is None:
+        if model not in _warned:
+            _warned.add(model)
+            logger.warning(
+                f"No list price for Gemini model '{model}'; cost will be "
+                f"omitted. Add it to src/agents/pricing.py "
+                f"(source: {GEMINI_PRICING_URL})."
+            )
+        return None
+    return _token_cost(prices, input_tokens, cached_input_tokens, output_tokens)
 
 
 # --- Anthropic -------------------------------------------------------------

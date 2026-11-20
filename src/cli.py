@@ -1038,13 +1038,13 @@ def main() -> None:
     # 'agent-run' subcommand
     agent_parser = subparsers.add_parser(
         "agent-run",
-        help="Evaluate coding agents (Claude Code, Codex) on Q problems",
+        help="Evaluate coding agents (Claude Code, Codex, Antigravity) on Q problems",
     )
     agent_parser.add_argument("dataset", help="Dataset name")
     agent_parser.add_argument(
         "--backend",
         required=True,
-        choices=["claude-code", "codex"],
+        choices=["claude-code", "codex", "antigravity"],
         help="Agent backend to use",
     )
     agent_parser.add_argument(
@@ -1055,8 +1055,8 @@ def main() -> None:
         type=int,
         default=DEFAULT_AGENT_MAX_TURNS,
         help=(
-            f"Soft cap on agent iterations — neither the Claude Code nor "
-            f"Codex CLI enforces a turn cap, so this is a warning threshold "
+            f"Soft cap on agent iterations — no supported agent CLI "
+            f"enforces a turn cap, so this is a warning threshold "
             f"only. --timeout is the enforced backstop. "
             f"(default: {DEFAULT_AGENT_MAX_TURNS})"
         ),
