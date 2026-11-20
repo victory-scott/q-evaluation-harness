@@ -656,22 +656,24 @@ class TestPricing:
 class TestAntigravityBackend:
     """Tests for Antigravity CLI (`agy -p`) invocation (mocked subprocess).
 
-    Result shapes follow agy 1.5.x `--output-format json` as reported in the
-    CLI's issue tracker. The `usage` key names are not documented, so the
-    tests cover each naming the parser accepts.
+    RESULT is the shape of a real agy 1.5.13 `-p --output-format json` result
+    (gemini-3.8-flash-low), with larger numbers. In agy's usage,
+    cache_read_tokens is reported on top of input_tokens:
+    total_tokens == input_tokens + output_tokens.
     """
 
     RESULT = {
+        "conversation_id": "c-1",
         "status": "SUCCESS",
         "response": "Implemented solution.q",
         "duration_seconds": 41.4,
         "num_turns": 6,
-        "conversation_id": "c-1",
         "usage": {
-            "input_tokens": 120000,
-            "cache_read_tokens": 90000,
+            "input_tokens": 30000,
             "output_tokens": 2500,
-            "thoughts_tokens": 1500,
+            "thinking_tokens": 1500,
+            "cache_read_tokens": 90000,
+            "total_tokens": 32500,
         },
     }
 
@@ -762,6 +764,7 @@ class TestAntigravityBackend:
         assert result.success is True
         assert result.task_id == 7
         assert result.num_turns == 6
+        # cache reads are added back so input_tokens is all input
         assert result.input_tokens == 120000
         assert result.cached_input_tokens == 90000
         assert result.output_tokens == 2500
@@ -808,7 +811,9 @@ class TestAntigravityBackend:
     @pytest.mark.parametrize(
         "usage",
         [
-            {"input_tokens": 10, "cache_read_input_tokens": 4, "output_tokens": 3},
+            # agy style: cache reads on top of input
+            {"input_tokens": 6, "cache_read_input_tokens": 4, "output_tokens": 3},
+            # Gemini API style: cached is a subset of the prompt count
             {"promptTokenCount": 10, "cachedContentTokenCount": 4,
              "candidatesTokenCount": 3},
         ],

@@ -15,10 +15,14 @@ written.
   `duration_seconds`, `finished_reason` (omitted on a normal finish),
   `conversation_id` and `usage`. Before 1.5.13, `status` stayed "ERROR" for runs
   that succeeded after a retry, so use 1.5.13 or later.
-- The field names inside `usage` are not documented in any source we could
-  read. `_extract_usage` therefore accepts the names agy uses elsewhere
-  (`input_tokens`, `cache_read_tokens`, `cache_read_input_tokens`, ...) and the
-  Gemini API's own names (`promptTokenCount`, ...).
+- `usage`, as observed from agy 1.5.13 `-p --output-format json`:
+  `{"input_tokens", "output_tokens", "thinking_tokens", "cache_read_tokens",
+  "total_tokens"}`, where total = input + output. So `cache_read_tokens` is NOT
+  part of `input_tokens` (unlike Codex and the Gemini API). `_extract_usage`
+  adds it back, so the harness's `input_tokens` is all input and
+  `cached_input_tokens` is the cached part of it, as for Codex. Gemini API
+  key names (`promptTokenCount`, ...) are also accepted, with their own subset
+  semantics, in case another auth mode reports them.
 - Print mode stops itself after `--print-timeout` (1.5.13 default: no limit;
   older builds: 5m). The harness passes a value past its own --timeout so agy
   never stops a task first. Issue #318 reports
@@ -82,9 +86,10 @@ AUTOMATION_AUTH_ENV_VARS = ("GEMINI_API_KEY", "AGY_ADC_AUTH")
 # Candidate key names inside agy's `usage` object, most specific first.
 _INPUT_KEYS = ("input_tokens", "prompt_tokens", "promptTokenCount")
 _OUTPUT_KEYS = ("output_tokens", "candidates_tokens", "candidatesTokenCount")
-_CACHED_KEYS = (
-    "cache_read_tokens",
-    "cache_read_input_tokens",
+# Cache reads reported on top of input_tokens (agy's own usage object).
+_SEPARATE_CACHED_KEYS = ("cache_read_tokens", "cache_read_input_tokens")
+# Cache reads already counted in input (Gemini API / OpenAI style).
+_SUBSET_CACHED_KEYS = (
     "cached_input_tokens",
     "cached_tokens",
     "cachedContentTokenCount",
@@ -108,15 +113,23 @@ def _first_int(usage: Dict[str, Any], keys: tuple) -> Optional[int]:
 def _extract_usage(usage: Any) -> Dict[str, Optional[int]]:
     """Normalize agy's `usage` object to the harness's token fields.
 
-    Assumes Gemini API semantics: cached tokens are a subset of input, and
-    thought tokens are reported separately from output but billed as output.
+    Output: `input_tokens` is all input (uncached + cached) and
+    `cached_input_tokens` the cached subset of it, the Codex convention that
+    pricing expects. Thought tokens are kept separate and billed as output.
     """
     if not isinstance(usage, dict):
         return {}
+    input_tokens = _first_int(usage, _INPUT_KEYS)
+    cached = _first_int(usage, _SUBSET_CACHED_KEYS)
+    separate = _first_int(usage, _SEPARATE_CACHED_KEYS)
+    if separate is not None:
+        cached = separate
+        if input_tokens is not None:
+            input_tokens += separate
     out = {
-        "input_tokens": _first_int(usage, _INPUT_KEYS),
+        "input_tokens": input_tokens,
         "output_tokens": _first_int(usage, _OUTPUT_KEYS),
-        "cached_input_tokens": _first_int(usage, _CACHED_KEYS),
+        "cached_input_tokens": cached,
         "thoughts_tokens": _first_int(usage, _THOUGHTS_KEYS),
     }
     return {k: v for k, v in out.items() if v is not None}
