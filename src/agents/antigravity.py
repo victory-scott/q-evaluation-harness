@@ -3,9 +3,10 @@
 Antigravity CLI is Google's coding agent and the official harness for the
 Gemini 4 models. Gemini CLI was shut down in its favour.
 
-Interface notes. The official docs (antigravity.google/docs/cli/headless) were
-not reachable when this was written, so the details below come from the CLI's
-GitHub repo: its CHANGELOG, release notes and issue reports, up to 1.5.13.
+Interface notes. Flags are checked against `agy --help` on 1.5.13. The output
+schema comes from the CLI's GitHub repo (CHANGELOG, release notes and issue
+reports), because the official headless docs were not readable when this was
+written.
 
 - Headless mode is `agy -p <prompt>`. It runs in the current directory, and
   `--output-format json|stream-json` gives structured output.
@@ -18,8 +19,9 @@ GitHub repo: its CHANGELOG, release notes and issue reports, up to 1.5.13.
   read. `_extract_usage` therefore accepts the names agy uses elsewhere
   (`input_tokens`, `cache_read_tokens`, `cache_read_input_tokens`, ...) and the
   Gemini API's own names (`promptTokenCount`, ...).
-- Print mode stops itself after `--print-timeout` (default 5m). The harness
-  passes its own --timeout so agy never stops a task first. Issue #318 reports
+- Print mode stops itself after `--print-timeout` (1.5.13 default: no limit;
+  older builds: 5m). The harness passes a value past its own --timeout so agy
+  never stops a task first. Issue #318 reports
   `-p` runs that hang with no output; the harness timeout kills those.
 - Auth: per a maintainer (issue #1411), running `agy -p` inside third-party
   automation is only supported with a Gemini API key (`GEMINI_API_KEY`) or
@@ -135,6 +137,7 @@ class AntigravityBackend(AgentBackend):
     def __init__(
         self,
         model: str,
+        reasoning_effort: Optional[str] = None,
         max_turns: int = 10,
         agent_instructions: Optional[str] = None,
         timeout: float = 300.0,
@@ -153,6 +156,9 @@ class AntigravityBackend(AgentBackend):
             save_events=save_events,
             no_skills=no_skills,
         )
+        # Passed as --effort (low|medium|high|xhigh|max); None leaves agy's
+        # default for the model.
+        self.reasoning_effort = reasoning_effort
         if not any(os.environ.get(v) for v in AUTOMATION_AUTH_ENV_VARS):
             logger.warning(
                 "Neither GEMINI_API_KEY nor AGY_ADC_AUTH is set, so agy will "
@@ -162,14 +168,12 @@ class AntigravityBackend(AgentBackend):
                 "subscription quota is shared with interactive use."
             )
         if no_skills:
-            # agy has no documented switch to ignore user-level settings,
-            # skills or MCP servers (~/.gemini/antigravity-cli/). Workspaces
-            # get no skill, but the operator's global ones still load.
+            # --disable-slash-commands (see build_command) blocks skills, but
+            # agy has no flag to ignore user-level MCP servers or plugins.
             logger.warning(
-                "--no-skills: no skill is installed in the workspace, but agy "
-                "has no flag to block user-global skills or MCP servers. "
-                "Check ~/.gemini/antigravity-cli/ is clean for a true clean "
-                "room."
+                "--no-skills: skills are disabled, but agy still loads "
+                "user-level MCP servers and plugins. Check "
+                "~/.gemini/antigravity-cli/ is clean for a true clean room."
             )
 
     @property
@@ -202,6 +206,12 @@ class AntigravityBackend(AgentBackend):
             "--print-timeout",
             f"{print_timeout}s",
         ]
+        if self.reasoning_effort:
+            cmd += ["--effort", self.reasoning_effort]
+        # Clean-room baseline: "Disable slash command and skill expansion in
+        # print mode" (agy --help), so no global skill reaches the agent.
+        if self.no_skills:
+            cmd.append("--disable-slash-commands")
         cmd.extend(self.extra_args)
         return cmd
 

@@ -733,8 +733,20 @@ class TestAntigravityBackend:
         # agy's own print timeout must outlast the harness timeout.
         assert args[args.index("--print-timeout") + 1] == "630s"
         assert args[-1] == "--sandbox"
+        assert "--effort" not in args
+        assert "--disable-slash-commands" not in args
         assert ex.call_args.kwargs["cwd"] == str(temp_workspace.resolve())
         assert ex.call_args.kwargs["stdin"] == asyncio.subprocess.DEVNULL
+
+    def test_effort_and_clean_room_flags(self) -> None:
+        from src.agents.antigravity import AntigravityBackend
+
+        backend = create_agent_backend(
+            "antigravity", model="m", reasoning_effort="xhigh", no_skills=True
+        )
+        args = backend.build_command("p")
+        assert args[args.index("--effort") + 1] == "xhigh"
+        assert "--disable-slash-commands" in args
 
     @pytest.mark.asyncio
     async def test_invoke_success(self, temp_workspace: Path) -> None:

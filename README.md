@@ -144,8 +144,8 @@ qeval agent-run q-humaneval --backend claude-code --model claude-opus-4-7 \
 # Evaluate Codex with GPT-5.5
 qeval agent-run q-humaneval --backend codex --model gpt-5.5
 
-# Evaluate Antigravity CLI with a Gemini 4 model (needs agy 1.5.13+ and a
-# Gemini API key; see "Antigravity backend" below)
+# Evaluate Antigravity CLI with a Gemini 4 model (needs agy 1.5.13+; see
+# "Antigravity backend" below for auth)
 qeval agent-run q-humaneval --backend antigravity --model gemini-4-argon-high \
   --timeout 600
 
@@ -178,13 +178,14 @@ qeval agent-run q-humaneval --backend claude-code --model claude-opus-4-7 \
 
 ### Antigravity backend
 
-The `antigravity` backend runs `agy -p` in each workspace with `--output-format json` (or `stream-json` with `--save-events`), `--dangerously-skip-permissions`, and a `--print-timeout` set just past `--timeout`, so the harness timeout always fires first. Instructions go in `AGENTS.md` and skills in `.agents/skills/`.
+Install `agy` with `curl -fsSL https://antigravity.google/cli/install.sh | bash`. The `antigravity` backend runs `agy -p` in each workspace with `--output-format json` (or `stream-json` with `--save-events`), `--dangerously-skip-permissions`, and a `--print-timeout` set just past `--timeout`, so the harness timeout always fires first. Instructions go in `AGENTS.md` and skills in `.agents/skills/`.
 
 - **Auth:** Antigravity's maintainers say running `agy -p` from third-party automation is only supported with a Gemini API key (`export GEMINI_API_KEY=...`) or Vertex AI / Application Default Credentials (`AGY_ADC_AUTH`), not a signed-in Google subscription. The backend logs a warning when neither variable is set.
 - **Models:** `--model` is passed to `agy` unchanged. Use the model name `agy` itself accepts (for example `gemini-4-argon-high`).
 - **Version:** use agy 1.5.13 or later. Earlier versions report `status: "ERROR"` for runs that succeeded after a retry, which the harness would count as a failed attempt.
 - **Cost:** `agy` reports tokens, not dollars. Cost is computed from list prices in `src/agents/pricing.py` (`GEMINI_PRICES`). That table is empty until Gemini 4 prices are added, so cost is reported as missing rather than guessed. Each task's raw `usage` object is kept in its result metadata, so you can check the token-field mapping against real runs.
-- **Clean room:** `--no-skills` installs no skill in the workspace, but `agy` has no flag to block user-level skills or MCP servers. Check that `~/.gemini/antigravity-cli/` is clean first.
+- **Effort:** `--reasoning-effort` is passed as `agy --effort` (`low`, `medium`, `high`, `xhigh`, `max`). Leave it out to use agy's default.
+- **Clean room:** `--no-skills` installs no skill and passes `--disable-slash-commands`, which turns off skill expansion. `agy` has no flag to block user-level MCP servers or plugins, so check that `~/.gemini/antigravity-cli/` is clean first.
 
 ### Agent Skills
 

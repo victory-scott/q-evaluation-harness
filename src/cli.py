@@ -888,7 +888,7 @@ def agent_run_command(args: argparse.Namespace) -> None:
 
     # Build backend kwargs
     backend_kwargs: Dict[str, Any] = {}
-    if args.backend == "codex" and args.reasoning_effort:
+    if args.backend in ("codex", "antigravity") and args.reasoning_effort:
         backend_kwargs["reasoning_effort"] = args.reasoning_effort
 
     try:
@@ -1070,8 +1070,12 @@ def main() -> None:
     agent_parser.add_argument(
         "--reasoning-effort",
         type=str,
-        default="high",
-        help="Codex reasoning effort: minimal, low, medium, high, xhigh (default: high)",
+        default=None,
+        help=(
+            "Reasoning effort. codex: minimal, low, medium, high, xhigh "
+            "(default: high). antigravity: low, medium, high, xhigh, max "
+            "(default: agy's own)"
+        ),
     )
     agent_parser.add_argument(
         "--concurrency",
