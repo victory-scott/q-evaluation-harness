@@ -740,6 +740,24 @@ class TestAntigravityBackend:
         assert ex.call_args.kwargs["cwd"] == str(temp_workspace.resolve())
         assert ex.call_args.kwargs["stdin"] == asyncio.subprocess.DEVNULL
 
+    def test_api_key_mode_settings(self, monkeypatch: pytest.MonkeyPatch) -> None:
+        from src.agents.antigravity import AntigravityBackend
+
+        monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+        assert "--settings" not in AntigravityBackend(model="m").build_command("p")
+
+        monkeypatch.setenv("GEMINI_API_KEY", "dummy")
+        args = AntigravityBackend(model="m").build_command("p")
+        assert json.loads(args[args.index("--settings") + 1]) == {
+            "modelProvider": "gemini"
+        }
+
+        # An operator-supplied --settings wins; ours is not added.
+        own = ["--settings", '{"modelProvider": "gemini", "x": 1}']
+        args = AntigravityBackend(model="m", extra_args=own).build_command("p")
+        assert args.count("--settings") == 1
+        assert args[-2:] == own
+
     def test_effort_and_clean_room_flags(self) -> None:
         from src.agents.antigravity import AntigravityBackend
 

@@ -30,6 +30,10 @@ written.
 - Auth: per a maintainer (issue #1411), running `agy -p` inside third-party
   automation is only supported with a Gemini API key (`GEMINI_API_KEY`) or
   Vertex AI / ADC (`AGY_ADC_AUTH`), not a signed-in Google subscription.
+  API-key mode also needs `modelProvider: "gemini"` (docs/install); with only
+  the key set, agy ignores it and, if nobody is signed in, `-p` hangs. When
+  GEMINI_API_KEY is set the backend passes it per session via `--settings`,
+  which agy never saves, so the operator's settings.json is left alone.
 """
 
 import asyncio
@@ -219,6 +223,11 @@ class AntigravityBackend(AgentBackend):
             "--print-timeout",
             f"{print_timeout}s",
         ]
+        # API-key mode: agy reads GEMINI_API_KEY only when modelProvider is
+        # "gemini". Skip if the operator passes their own --settings, since a
+        # second --settings flag would conflict with theirs.
+        if os.environ.get("GEMINI_API_KEY") and "--settings" not in self.extra_args:
+            cmd += ["--settings", json.dumps({"modelProvider": "gemini"})]
         if self.reasoning_effort:
             cmd += ["--effort", self.reasoning_effort]
         # Clean-room baseline: "Disable slash command and skill expansion in
